@@ -52,15 +52,15 @@ const products = {
             comentarios: [{
                 usuario: 'pilipro',
                 texto_comentario: 'malo',
-                Foto: "fotoPerfil.png"
+                Foto: "PfotoPerfil.png"
             },{
                 usuario: 'julita',
                 texto_comentario: 'lindo',
-                Foto: "fotoPerfil.png"
+                Foto: "JfotoPerfil.png"
             },{
                 usuario: 'fede',
                 texto_comentario: 'recomendable',
-                Foto: "fotoPerfil.png"
+                Foto: "FfotoPerfil.png"
             }]
         },
         {
@@ -76,9 +76,9 @@ const products = {
                 texto_comentario: 'lindo',
                 Foto: "FfotoPerfil.png"
             },{
-                usuario: 'pilipro',
-                texto_comentario: 'recomendable',
-                Foto: "PfotoPerfil.png"
+                usuario: 'vicqueen',
+                texto_comentario: 'no recomendable',
+                Foto: "VfotoPerfil.png"
             }]
         },
         {
@@ -94,9 +94,9 @@ const products = {
                 texto_comentario: 'no recomendable',
                 Foto: "FfotoPerfil.png"
             },{
-                usuario: 'pilipro',
-                texto_comentario: 'recomendable',
-                Foto: "fotoPerfil.png"
+                usuario: 'vicqueen',
+                texto_comentario: 'no recomendable',
+                Foto: "PfotoPerfil.png"
             }]
         },
         {
@@ -114,7 +114,7 @@ const products = {
             },{
                 usuario: 'fede',
                 texto_comentario: 'recomendable',
-                Foto: "fotoPerfil.png"
+                Foto: "FfotoPerfil.png"
             }]
         },
         {
