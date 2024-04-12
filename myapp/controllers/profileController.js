@@ -1,6 +1,9 @@
+let product = require("../db/product")
+
 let profileController = {
-    profile : function (req, res) {
-        res.render('profile');
+    index : function (req, res) {
+        res.render('proile', {title: 'profile'});
     }
 
-}
+};
+module.exports = profileController;

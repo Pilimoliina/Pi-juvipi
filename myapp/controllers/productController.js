@@ -1,8 +1,8 @@
-const product = require("../db/product")
+let product = require("../db/product")
 
 const productController = {
-    product: function(req,res){
-         res.render("product", {lista: product.lista});
+    index: function(req,res){
+        res.render('product', {title: 'product'});
     },
 };
 

@@ -1,11 +1,11 @@
 let product = require('../db/product');
 
-let indexC = {
-    register : function (req, res) {
-        res.render('register');
+let indexController = {
+    index : function (req, res) {
+        res.render('index', {title: 'index'});
     }
 
 
-}
+};
 
-module.exports = indexC;
+module.exports = indexController;

@@ -1,5 +1,15 @@
-const product = {
-    lista: 
+const mercadolibre = {
+    usuarios: [{
+        Mail: "mvm@gmail.com",
+        Usuario: "vicqueen",
+        Contrasenia: "***",
+        FechaNacimiento: 2004-9-27,
+        NúmeroDocumento: 46240453,
+        Foto: "fotoPerfil.png",
+    }],
+
+
+    product: 
     [
         {
             nombre: "celular",
@@ -185,4 +195,4 @@ const product = {
     ]
 }
 
-module.exports = product;
+module.exports = mercadolibre;
