@@ -5,6 +5,7 @@ var productController = require('../controllers/productController');
 
 
 router.get('/',productController.index);
+router.get('/product',productController.index);
 
 // router.get('/product_add',function (rec,res,next) {
 //     res.render('product_add');

@@ -2,7 +2,7 @@ const mercadolibre = {
     usuarios: [{
         Mail: "mvm@gmail.com",
         Usuario: "vicqueen",
-        Contrasenia: "***",
+        Contrasenia: "mvm",
         FechaNacimiento: 2004-9-27,
         NúmeroDocumento: 46240453,
         Foto: "fotoPerfil.png",
