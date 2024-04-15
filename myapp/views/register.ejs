@@ -1,48 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+	<!-- Include Head -->
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+
+		<title> Mercado Liebre Argentina</title>
+		<!-- Font Awesome Stylesheet -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+		<!-- Bootstrap Grid Stylesheet -->
+		<link rel="stylesheet" href="stylesheets/bootstrap-grid.min.css">
+		<!-- Own Stylesheet -->
+		<link rel="stylesheet" href="stylesheets/app.css">
+	</head>
+
+	<body>
+		<!-- Header -->
+		<%- include('./partials/header')  %>
+		<!-- /Header -->
+		<!-- Novedades -->
+		<div class="container products-wrapper">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Registrate</h2>
+				</div>
+				<!-- Show the "ultimos" products -->
+	<form action="./register.ejs" method="get">
+
+		<div>
+			<label for="email">Email:</label> 
+			<input type="email" name="tuEmail" id="email" placeholder="ejemplo@gmail.com">
+		</div>
+		<div>
+			<label for="usuario">Usuario:</label>
+			<input type="text" name="nUsuario" id="usuario">
+		</div>
+		<div>
+			<label for="contra">Contraseña:</label>
+			<input type="password" name="Contra" id="contra">
+		</div>
+		<div>
+			<label for="nacimiento">Fecha de nacimiento:</label>
+			<input type="date" name="fechaN" id="nacimiento">
+		</div>
+		<div>
+			<label for="doc">Numero de documento:</label>
+			<input type="number" name="numeroD" id="doc">
+		</div>
+		<div>
+			<label for="foto">Foto de perfil:</label>
+			<input type="text" name="perfil" id="foto">
+		</div>
+		
+		<input type="submit" value="Registrarse">
 
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/header')  %>
-	<!-- /Header -->
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Registrate</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-<form action="./register.ejs" method="get">
-
-	<div>
-		<label for="email">Email:</label> 
-		<input type="email" name="tuEmail" id="email" placeholder="ejemplo@gmail.com">
-	</div>
-	<div>
-		<label for="usuario">Usuario:</label>
-		<input type="text" name="nUsuario" id="usuario">
-	</div>
-	<div>
-		<label for="contra">Contraseña:</label>
-		<input type="password" name="Contra" id="contra">
-	</div>
-	<div>
-		<label for="nacimiento">Fecha de nacimiento:</label>
-		<input type="date" name="fechaN" id="nacimiento">
-	</div>
-	<div>
-		<label for="doc">Numero de documento:</label>
-		<input type="number" name="numeroD" id="doc">
-	</div>
-	<div>
-		<label for="foto">Foto de perfil:</label>
-		<input type="text" name="perfil" id="foto">
-	</div>
-
-</form>
+	</form>
 
 
-	<!-- footer -->
-	<%- include('./partials/footer') %>
-	<!-- footer -->
-<body/>
+		<!-- footer -->
+		<%- include('./partials/footer') %>
+		<!-- footer -->
+	</body>
+
 </html>
