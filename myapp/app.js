@@ -14,9 +14,6 @@ var profile_editRouter = require('./routes/profile_edit');
 var searchRouter = require('./routes/search');
 var product_addRouter = require('./routes/product_add');
 
-
-
-
 var app = express();
 
 // view engine setup
@@ -38,11 +35,6 @@ app.use('/search',searchRouter);
 app.use('/product_add',product_addRouter);
 app.use('/profile',profileRouter);
 app.use('/profile_edit',profile_editRouter);
-
-
-
-
-
 
 
 // catch 404 and forward to error handler
