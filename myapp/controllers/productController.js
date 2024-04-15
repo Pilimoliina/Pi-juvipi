@@ -1,4 +1,4 @@
-let product = require("../db/product")
+let product = require("../db/dataBase")
 
 const productController = {
     product_add: function (req, res) {
@@ -7,7 +7,7 @@ const productController = {
     product: function(req,res){
         res.render('product', {title: 'product'});
     },
-    search : function (req, res) {
+    search: function (req, res) {
         res.render('search', {title: 'search'});
     }
 };
