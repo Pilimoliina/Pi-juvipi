@@ -22,12 +22,16 @@
 		<!-- /Header -->
 		<!-- product detail -->
 		<div class="container products-wrapper">
+			<% for (let i = 0; i < lista; i++) { %>
 			<div class="d-flex align-items-center">
-				<h2 class="products-title">Nombre del producto</h2> 
+				<h2 class="products-title"><%= lista[i].nombre %></h2> 
 				<p class="product-detail-description">
-					<a href="product_add">Editar</a>
+					<a href="/product_add">Editar</a>
 				</p>
 			</div>
+			<% } %>
+
+
 			<div class="product-detail">
 				<div class="row">
 					<article class="col-12 col-lg-8 product-detail-info">
@@ -92,6 +96,7 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
 		<!-- /product detail -->
 
