@@ -5,15 +5,9 @@ var productController = require('../controllers/productController');
 
 
 router.get('/',productController.index);
-router.get('/product',productController.index);
+router.get('/product',productController.product);
+router.get('/product_add', productController.product_Add);
+router.get('/search', productController.search);
 
-// router.get('/product_add',function (rec,res,next) {
-//     res.render('product_add');
-    
-// });
 
-// router.get('/search-result',function (rec,res,next) {
-//     res.render('search-result');
-    
-// });
 module.exports = router;
