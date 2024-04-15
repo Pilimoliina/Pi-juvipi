@@ -27,31 +27,31 @@
 					<h2 class="products-title">Registrate</h2>
 				</div>
 				<!-- Show the "ultimos" products -->
-	<form action="./register.ejs" method="get">
+	<form action="/login" method="get">
 
 		<div>
 			<label for="email">Email:</label> 
-			<input type="email" name="tuEmail" id="email" placeholder="ejemplo@gmail.com">
+			<input type="email" name="tuEmail" id="email" placeholder="ejemplo@gmail.com" required>
 		</div>
 		<div>
 			<label for="usuario">Usuario:</label>
-			<input type="text" name="nUsuario" id="usuario">
+			<input type="text" name="nUsuario" id="usuario" required>
 		</div>
 		<div>
 			<label for="contra">Contraseña:</label>
-			<input type="password" name="Contra" id="contra">
+			<input type="password" name="Contra" id="contra" required>
 		</div>
 		<div>
 			<label for="nacimiento">Fecha de nacimiento:</label>
-			<input type="date" name="fechaN" id="nacimiento">
+			<input type="date" name="fechaN" id="nacimiento" required>
 		</div>
 		<div>
 			<label for="doc">Numero de documento:</label>
-			<input type="number" name="numeroD" id="doc">
+			<input type="number" name="numeroD" id="doc" required>
 		</div>
 		<div>
 			<label for="foto">Foto de perfil:</label>
-			<input type="text" name="perfil" id="foto">
+			<input type="text" name="perfil" id="foto" required>
 		</div>
 		
 		<input type="submit" value="Registrarse">
