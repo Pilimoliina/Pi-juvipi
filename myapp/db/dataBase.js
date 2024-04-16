@@ -7,8 +7,6 @@ const mercadolibre = {
         NúmeroDocumento: 46240453,
         Foto: "VfotoPerfil.png",
     },
-
-
     product: 
     [
         {
@@ -192,9 +190,9 @@ const mercadolibre = {
             }],
             filtroId : function (ID) {
                 let filtrar = [];
-                for (let i = 0; i < this.lista.length; i++) {
-                    if (this.lista[i].id == ID) {
-                        filtrar.push(this.lista[i])
+                for (let i = 0; i < this.product.length; i++) {
+                    if (this.product[i].id == ID) {
+                        filtrar.push(this.product[i])
                     }
                     
                 }
