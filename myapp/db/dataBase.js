@@ -5,7 +5,7 @@ const mercadolibre = {
         Contrasenia: "mvm",
         FechaNacimiento: 2004-9-27,
         NúmeroDocumento: 46240453,
-        Foto: "VfotoPerfil.png",
+        Foto: "/images/users/VfotoPerfil.png",
     },
     product: 
     [
@@ -16,15 +16,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'pilipro',
                 texto_comentario: 'Malo',
-                Foto: "PfotoPerfil.png"
+                Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'julita',
                 texto_comentario: 'Lindo',
-                Foto: "JfotoPerfil.png"
+                Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'fede',
                 texto_comentario: 'Recomendable',
-                Foto: "FfotoPerfil.png"
+                Foto: "/images/users/FfotoPerfil.png"
             }]
         },
         {
@@ -34,15 +34,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'julita',
                 texto_comentario: 'No recomendable',
-                Foto: "JfotoPerfil.png"
+                Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'fede',
                 texto_comentario: 'Lindo',
-                Foto: "FfotoPerfil.png"
+                Foto: "/images/users/FfotoPerfil.png"
             },{
                 usuario: 'vicqueen',
                 texto_comentario: 'No recomendable',
-                Foto: "VfotoPerfil.png"
+                Foto: "/images/users/VfotoPerfil.png"
             }]
         },
         {
@@ -52,15 +52,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'pilipro',
                 texto_comentario: 'Quiero devolucion',
-                Foto: "PfotoPerfil.png"
+                Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'fede',
                 texto_comentario: 'No recomendable',
-                Foto: "FfotoPerfil.png"
+                Foto: "/images/users/FfotoPerfil.png"
             },{
                 usuario: 'vicqueen',
                 texto_comentario: 'No recomendable',
-                Foto: "PfotoPerfil.png"
+                Foto: "/images/users/VfotoPerfil.png"
             }]
         },
         {
@@ -70,15 +70,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'pilipro',
                 texto_comentario: 'Muy bueno',
-                Foto: "PfotoPerfil.png"
+                Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'julita',
                 texto_comentario: 'No recomendable',
-                Foto: "JfotoPerfil.png"
+                Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'fede',
                 texto_comentario: 'Recomendable',
-                Foto: "FfotoPerfil.png"
+                Foto: "/images/users/FfotoPerfil.png"
             }]
         },
         {
@@ -88,15 +88,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'vicqueen',
                 texto_comentario: 'Lindo',
-                Foto: "VfotoPerfil.png"
+                Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'julita',
                 texto_comentario: 'Lindo',
-                Foto: "JfotoPerfil.png"
+                Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'agustina',
                 texto_comentario: 'Malo',
-                Foto: "AfotoPerfil.png"
+                Foto: "/images/users/AfotoPerfil.png"
             }]
         },
         {
@@ -106,15 +106,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'vicqueen',
                 texto_comentario: 'No recomendable',
-                Foto: "VfotoPerfil.png"
+                Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'julita',
                 texto_comentario: 'No recomendable',
-                Foto: "JfotoPerfil.png"
+                Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'agustina',
                 texto_comentario: 'Quiero devolucion',
-                Foto: "AfotoPerfil.png"
+                Foto: "/images/users/AfotoPerfil.png"
             }]
         },
         {
@@ -124,15 +124,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'vicqueen',
                 texto_comentario: 'Recomendable',
-                Foto: "VfotoPerfil.png"
+                Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'julita',
                 texto_comentario: 'Recomendable',
-                Foto: "JfotoPerfil.png"
+                Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'agustina',
                 texto_comentario: 'Muy bueno',
-                Foto: "AfotoPerfil.png"
+                Foto: "/images/users/AfotoPerfil.png"
             }]
         },
         {
@@ -142,15 +142,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'vicqueen',
                 texto_comentario: 'Lindo',
-                Foto: "VfotoPerfil.png"
+                Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'pilipro',
                 texto_comentario: 'Malo',
-                Foto: "PfotoPerfil.png"
+                Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'agustina',
                 texto_comentario: 'Malo',
-                Foto: "AfotoPerfil.png"
+                Foto: "/images/users/AfotoPerfil.png"
             }]
         },
         {
@@ -160,15 +160,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'vicqueen',
                 texto_comentario: 'No recomendable',
-                Foto: "VfotoPerfil.png"
+                Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'fede',
                 texto_comentario: 'Lindo',
-                Foto: "FfotoPerfil.png"
+                Foto: "/images/users/FfotoPerfil.png"
             },{
                 usuario: 'agustina',
                 texto_comentario: 'Quiero devolucion',
-                Foto: "AfotoPerfil.png"
+                Foto: "/images/users/AfotoPerfil.png"
             }]
         },
         {
@@ -178,15 +178,15 @@ const mercadolibre = {
             comentarios: [{
                 usuario: 'vicqueen',
                 texto_comentario: 'Recomendable',
-                Foto: "VfotoPerfil.png"
+                Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'pilipro',
                 texto_comentario: 'Muy bueno',
-                Foto: "PfotoPerfil.png"
+                Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'agustina',
                 texto_comentario: 'Muy bueno',
-                Foto: "AfotoPerfil.png"
+                Foto: "/images/users/AfotoPerfil.png"
             }],
             filtroId : function (ID) {
                 let filtrar = [];
