@@ -1,11 +1,12 @@
-let product = require("../db/dataBase")
+let mercadolibre = require("../db/dataBase")
 
 let usersController = {
     profile : function (req, res) {
-        res.render('profile', {title: 'profile'});
+        res.render('profile', {lista2: mercadolibre.usuario});
+
     },
     profile_edit : function (req, res) {
-        res.render('profile_edit', {title: 'profile_edit'});
+        res.render('profile_edit', {lista2: mercadolibre.usuario});
     },
 
 };

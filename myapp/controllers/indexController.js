@@ -1,5 +1,5 @@
 const mercadolibre = require('../db/dataBase');
-let product = require('../db/dataBase');
+
 
 let indexController = {
     index : function (req, res) {

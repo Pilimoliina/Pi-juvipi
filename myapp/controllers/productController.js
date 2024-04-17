@@ -1,17 +1,21 @@
 const mercadolibre = require("../db/dataBase");
-let product = require("../db/dataBase")
+
+const lista2 = {
+    product_add:[]
+};
 
 const productController = {
     product_add: function (req, res) {
-        res.render('product_add', {lista: mercadolibre.product_add});
-        
+        res.render('product_add', { lista: mercadolibre.product_add,
+                                    lista2: lista2.product_add });
     },
     product: function(req,res){
-        res.render('product', {lista: mercadolibre.product});
+        res.render('product', { lista: mercadolibre.product });
     },
     search: function (req, res) {
-        res.render('search');
+        res.render('search',{ lista: mercadolibre.product});
     },
 };
 
 module.exports = productController;
+
