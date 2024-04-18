@@ -22,7 +22,7 @@
 					</div>
 					<div>
 						<ul class="">
-							<li>8 productos</li>
+							<li> <%= lista.length %> productos %> </li>
 							<li>200 seguidores</li>
 							<li>300 comentarios</li>
 						</ul>
@@ -42,7 +42,7 @@
 					<h2 class="products-title">Mis productos</h2>
 				</div>
 				<!-- Show mis productos -->
-				<% for (let i = 0; i < 3; i++) { %>
+				<% for (let i = 0; i < lista.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="product">
@@ -52,7 +52,7 @@
 							<article class="product-box_data">
 								<h2><%= lista[i].nombre %></h2>
 								<p><%= lista[i].descripcion %></p>
-								<p>Comentarios: 12</p>
+								<p>Comentarios: <%= lista[i].comentarios.length %></p>
 							</article>
 						</a>
 					</section>

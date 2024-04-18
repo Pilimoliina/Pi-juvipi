@@ -6,7 +6,7 @@ const lista2 = {
 
 const productController = {
     product_add: function (req, res) {
-        res.render('product_add', { lista: mercadolibre.product_add,
+        res.render('product_add', { lista: mercadolibre.product,
                                     lista2: mercadolibre.usuario});
     },
     product: function(req,res){
