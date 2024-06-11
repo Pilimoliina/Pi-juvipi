@@ -42,8 +42,8 @@ module.exports = function (sequelize, DataTypes) {
 
     let config = {
         tableName: "usuarios",
-        timestamps: false, //Aclareción en caso de no explicitar created_at, deleted_at y updated_at
-        underscored: true, //Aclareción en caso que los timestamps usen guiones bajos en lugar de camelCase.
+        timestamps: false, //Aclaración en caso de no explicitar created_at, deleted_at y updated_at
+        underscored: true, //Aclaración en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
     const Usuario = sequelize.define(alias, cols, config);
