@@ -1,5 +1,5 @@
-module.exports = function (sequelize, DataTypes){
-    
+module.exports = function (sequelize, DataTypes) {
+
     let alias = 'Usuario'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
 
     let cols = {
@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes){
             primaryKey: true,
             type: DataTypes.INTEGER
         },
-       
+
         nombre: {
             type: DataTypes.STRING
         },
@@ -21,14 +21,14 @@ module.exports = function (sequelize, DataTypes){
         usuario: {
             type: DataTypes.STRING
         },
-        
+
         contrasenia: {
             type: DataTypes.STRING
         },
-      //  remember_token: {
-      //      type: dataTypes.STRING
-       // },
-        createdAt : {
+        //  remember_token: {
+        //      type: dataTypes.STRING
+        // },
+        createdAt: {
             type: DataTypes.DATE,
         },
         updatedAt: {
@@ -41,23 +41,23 @@ module.exports = function (sequelize, DataTypes){
     }
 
     let config = {
-        tableName : "usuarios",
+        tableName: "usuarios",
         timestamps: false, //Aclareción en caso de no explicitar created_at, deleted_at y updated_at
         underscored: true, //Aclareción en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
     const Usuario = sequelize.define(alias, cols, config);
-    Usuario.associate = function(models) {
-        Usuario.hasMany(models.product, {
+    Usuario.associate = function (models) {
+        Usuario.hasMany(models.Producto, {
             as: "productos",
-        
+            foreignKey: "usuarios_id"
         });
-          Usuario.hasMany(models.comentarios, {
-              as: "comentarios",
-        
-          });
-      }
-      
+        Usuario.hasMany(models.Comentario, {
+            as: "comentarios",
+            foreignKey: "usuarios_id"
+        });
+    }
+
 
     return Usuario;
 
