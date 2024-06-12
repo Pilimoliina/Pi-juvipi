@@ -1,4 +1,4 @@
-const mercadolibre = require("../db/dataBase");
+const mercadolibre = require("../database/models");
 
 
 let indexController = {

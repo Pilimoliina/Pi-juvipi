@@ -1,5 +1,7 @@
 const mercadolibre = require("../database/models");
-
+  const lista2 = {
+      product_add:[]
+  };
 const productController = {
     index: function (req, res) {
         mercadolibre.Producto.findAll({
