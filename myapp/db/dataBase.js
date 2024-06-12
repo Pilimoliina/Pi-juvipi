@@ -15,15 +15,15 @@ const mercadolibre = {
             descripcion: "Dispositivo inalámbrico electrónico",
             comentarios: [{
                 usuario: 'pilipro',
-                texto_comentario: 'Malo',
+                textoComentario: 'Malo',
                 Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'julita',
-                texto_comentario: 'Lindo',
+                textoComentario: 'Lindo',
                 Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'fede',
-                texto_comentario: 'Recomendable',
+                textoComentario: 'Recomendable',
                 Foto: "/images/users/FfotoPerfil.png"
             }]
         },
@@ -33,15 +33,15 @@ const mercadolibre = {
             descripcion: "Máquina digital programable",
             comentarios: [{
                 usuario: 'julita',
-                texto_comentario: 'No recomendable',
+                textoComentario: 'No recomendable',
                 Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'fede',
-                texto_comentario: 'Lindo',
+                textoComentario: 'Lindo',
                 Foto: "/images/users/FfotoPerfil.png"
             },{
                 usuario: 'vicqueen',
-                texto_comentario: 'No recomendable',
+                textoComentario: 'No recomendable',
                 Foto: "/images/users/VfotoPerfil.png"
             }]
         },
@@ -51,15 +51,15 @@ const mercadolibre = {
             descripcion: "Dispositivo informático móvil en el que la pantalla táctil ocupa casi todo su tamaño",
             comentarios: [{
                 usuario: 'pilipro',
-                texto_comentario: 'Quiero devolucion',
+                textoComentario: 'Quiero devolucion',
                 Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'fede',
-                texto_comentario: 'No recomendable',
+                textoComentario: 'No recomendable',
                 Foto: "/images/users/FfotoPerfil.png"
             },{
                 usuario: 'vicqueen',
-                texto_comentario: 'No recomendable',
+                textoComentario: 'No recomendable',
                 Foto: "/images/users/VfotoPerfil.png"
             }]
         },
@@ -69,15 +69,15 @@ const mercadolibre = {
             descripcion: "Auriculares inalámbricos",
             comentarios: [{
                 usuario: 'pilipro',
-                texto_comentario: 'Muy bueno',
+                textoComentario: 'Muy bueno',
                 Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'julita',
-                texto_comentario: 'No recomendable',
+                textoComentario: 'No recomendable',
                 Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'fede',
-                texto_comentario: 'Recomendable',
+                textoComentario: 'Recomendable',
                 Foto: "/images/users/FfotoPerfil.png"
             }]
         },
@@ -87,15 +87,15 @@ const mercadolibre = {
             descripcion: "Lápiz para pantalla táctil",
             comentarios: [{
                 usuario: 'vicqueen',
-                texto_comentario: 'Lindo',
+                textoComentario: 'Lindo',
                 Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'julita',
-                texto_comentario: 'Lindo',
+                textoComentario: 'Lindo',
                 Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'agustina',
-                texto_comentario: 'Malo',
+                textoComentario: 'Malo',
                 Foto: "/images/users/AfotoPerfil.png"
             }]
         },
@@ -105,15 +105,15 @@ const mercadolibre = {
             descripcion: "Sistema para la transmisión y recepción de imágenes y sonidos a distancia que simulan movimientos",
             comentarios: [{
                 usuario: 'vicqueen',
-                texto_comentario: 'No recomendable',
+                textoComentario: 'No recomendable',
                 Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'julita',
-                texto_comentario: 'No recomendable',
+                textoComentario: 'No recomendable',
                 Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'agustina',
-                texto_comentario: 'Quiero devolucion',
+                textoComentario: 'Quiero devolucion',
                 Foto: "/images/users/AfotoPerfil.png"
             }]
         },
@@ -123,15 +123,15 @@ const mercadolibre = {
             descripcion: "Máquina destinada a la preparación del café y recipiente para servirlo",
             comentarios: [{
                 usuario: 'vicqueen',
-                texto_comentario: 'Recomendable',
+                textoComentario: 'Recomendable',
                 Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'julita',
-                texto_comentario: 'Recomendable',
+                textoComentario: 'Recomendable',
                 Foto: "/images/users/JfotoPerfil.png"
             },{
                 usuario: 'agustina',
-                texto_comentario: 'Muy bueno',
+                textoComentario: 'Muy bueno',
                 Foto: "/images/users/AfotoPerfil.png"
             }]
         },
@@ -141,15 +141,15 @@ const mercadolibre = {
             descripcion: "Electrodoméstico que genera frío para posibilitar la conservación de los alimentos y de otros productos.",
             comentarios: [{
                 usuario: 'vicqueen',
-                texto_comentario: 'Lindo',
+                textoComentario: 'Lindo',
                 Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'pilipro',
-                texto_comentario: 'Malo',
+                textoComentario: 'Malo',
                 Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'agustina',
-                texto_comentario: 'Malo',
+                textoComentario: 'Malo',
                 Foto: "/images/users/AfotoPerfil.png"
             }]
         },
@@ -159,15 +159,15 @@ const mercadolibre = {
             descripcion: "Electrodoméstico destinado a cocinar o calentar alimentos",
             comentarios: [{
                 usuario: 'vicqueen',
-                texto_comentario: 'No recomendable',
+                textoComentario: 'No recomendable',
                 Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'fede',
-                texto_comentario: 'Lindo',
+                textoComentario: 'Lindo',
                 Foto: "/images/users/FfotoPerfil.png"
             },{
                 usuario: 'agustina',
-                texto_comentario: 'Quiero devolucion',
+                textoComentario: 'Quiero devolucion',
                 Foto: "/images/users/AfotoPerfil.png"
             }]
         },
@@ -177,15 +177,15 @@ const mercadolibre = {
             descripcion: "Es un electrodoméstico que te permite cocer o freír los alimentos sin necesidad de sumergirlos en aceite",
             comentarios: [{
                 usuario: 'vicqueen',
-                texto_comentario: 'Recomendable',
+                textoComentario: 'Recomendable',
                 Foto: "/images/users/VfotoPerfil.png"
             },{
                 usuario: 'pilipro',
-                texto_comentario: 'Muy bueno',
+                textoComentario: 'Muy bueno',
                 Foto: "/images/users/PfotoPerfil.png"
             },{
                 usuario: 'agustina',
-                texto_comentario: 'Muy bueno',
+                textoComentario: 'Muy bueno',
                 Foto: "/images/users/AfotoPerfil.png"
             }],
             filtroId : function (ID) {
@@ -203,4 +203,4 @@ const mercadolibre = {
     ]
 }
 
-module.exports = db;
+module.exports = mercadolibre;

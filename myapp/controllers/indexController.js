@@ -1,4 +1,4 @@
-const mercadolibre = require("../database/models");
+const mercadolibre = require("../db/dataBase");
 
 
 let indexController = {
@@ -18,12 +18,12 @@ let indexController = {
                 return console.log(errores);
      })
     },
-    //  login: function (req, res) {
-    //    //  res.render('login', { title: 'login' });
-    //  },
-    // register: function (req, res) {
-    //   //   res.render('register', { title: 'register' });
-    //  },
+      login: function (req, res) {
+          res.render('login', { title: 'login' });
+      },
+     register: function (req, res) {
+       res.render('register', { title: 'register' });
+      },
 };
 
 module.exports = indexController;

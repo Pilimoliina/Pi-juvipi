@@ -1,54 +1,55 @@
 const mercadolibre = require("../database/models");
 
 const productController = {
-    index: function (req,res) {
+    index: function (req, res) {
         mercadolibre.Producto.findAll({
             include: [
-                {association: "Usuario"},
-                {association: "Comentario"}
-]
-})
+                { association: "Usuario" },
+                { association: "Comentario" }
+            ]
+        })
 
-    .then(function(resultado) {
+            .then(function (resultado) {
 
-        return res.render("index",{lista: resultado})
+                return res.render("index", { lista: resultado })
 
-    }).catch(function(errores) {
+            }).catch(function (errores) {
 
-        return console.log(errores);
-})
-},
-    productAdd: function (req, res) {
+                return console.log(errores);
+            })
+    },
+    product_add: function (req, res) {
         res.render('productAdd', { lista: mercadolibre });
     },
-    product: function(req,res){
-        res.render('product', { lista: mercadolibre});
+    product: function (req, res) {
+        res.render('product', { lista: mercadolibre });
     },
     search: function (req, res) {
-        res.render('search',{ lista: mercadolibre.product});
+        res.render('search', { lista: mercadolibre.product });
     },
 
-productInfo: function (req,res) {
-    let Id = req.params.id
-    mercadolibre.Producto.findByPk(Id, {
-        include: [
-            {association: "Usuario"},
-            {association: "Comentario",
-                include: [{association: "Usuario"}]
-            }]
-    })
+    productInfo: function (req, res) {
+        let Id = req.params.id
+        mercadolibre.Producto.findByPk(Id, {
+            include: [
+                { association: "Usuario" },
+                {
+                    association: "Comentario",
+                    include: [{ association: "Usuario" }]
+                }]
+        })
 
-        .then(function(resultado) {
-            return res.render("productos",{lista: resultado})
-    
-        }).catch(function (errores) {
-            return console.log(errores);;
-        
-    })
+            .then(function (resultado) {
+                return res.render("productos", { lista: resultado })
+
+            }).catch(function (errores) {
+                return console.log(errores);;
+
+            })
     },
 
-    search: function(req,res, next) {
-        return res.render("productos", {lista: productos})
+    search: function (req, res, next) {
+        return res.render("productos", { lista: productos })
     }
 };
 

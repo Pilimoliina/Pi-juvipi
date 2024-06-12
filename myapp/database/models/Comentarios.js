@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         productosId: {
             type: DataTypes.INTEGER
         },
-        texto_comentario: {
+        textoComentario: {
             type: DataTypes.STRING
         },
         createdAt: {
@@ -27,19 +27,19 @@ module.exports = function (sequelize, DataTypes) {
 
     let config = {
         tableName: "comentarios",
-        timestamps: false,
+        timestamps: true,
         underscored: true
     };
 
     let Comentario = sequelize.define(alias, cols, config);
     Comentario.associate = function (models){
         Comentario.belongsTo(models.Usuario,{
-            as: "usuarios",
+            as: "Usuario",
             foreignKey: "usuariosId"
         });
 
     Comentario.belongsTo(models.Producto,{
-            as: "productos",
+            as: "Producto",
             foreignKey: "productosId"
         });
     }
