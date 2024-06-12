@@ -1,10 +1,10 @@
 const mercadolibre = require("../database/models");
-
+const { association } = require("sequelize");
 
 let indexController = {
     index: function (req, res) {
        mercadolibre.Producto.findAll({ include: [
-            { association: "usuarios" },
+            { association: "usuario" },
             { association: "comentarios" },
          ] }
           )
