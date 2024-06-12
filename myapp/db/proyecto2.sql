@@ -28,14 +28,14 @@ CREATE TABLE productos (
 	updatedAt 			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deletedAt			TIMESTAMP 		NULL,
     
-    FOREIGN KEY (usuarios_id) REFERENCES usuarios(id)
+    FOREIGN KEY (usuariosId) REFERENCES usuarios(id)
 	
 );
 
 CREATE TABLE comentarios (
 	id 					INT 			UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	usuarios_id			INT				UNSIGNED,
-	productos_id		INT				UNSIGNED,
+	usuariosId			INT				UNSIGNED,
+	productosId		    INT				UNSIGNED,
 	texto_comentario	VARCHAR(500)	NOT NULL,
     createdAt 			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ,
 	updatedAt 			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -43,7 +43,7 @@ CREATE TABLE comentarios (
 
     
     FOREIGN KEY (usuariosId) REFERENCES usuarios(id),
-	FOREIGN KEY (productos_id) REFERENCES productos(id)
+	FOREIGN KEY (productosId) REFERENCES productos(id)
 );
 
 /* INSERTANDO USUARIOS */
@@ -95,99 +95,97 @@ CREATE TABLE comentarios (
 
   /* INSERTANDO COMENTARIOS */
     /* comentarios del  1 */
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 1, 2, "recomendable", DEFAULT, DEFAULT, DEFAULT);
  
-  INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+  INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 1, 3, " no recomendable", DEFAULT, DEFAULT, DEFAULT);
  
-  INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+  INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 1, 8, "lindo", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 1, 7, "recomendable", DEFAULT, DEFAULT, DEFAULT);
  
-  INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+  INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 1, 6, " no recomendable", DEFAULT, DEFAULT, DEFAULT);
  
-  INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+  INSERT INTO comentarios (id, usuariosId, productoId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 1, 5, "lindo", DEFAULT, DEFAULT, DEFAULT);
 
    
    /* comntarios del   2 */
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 2, 4, "muy bueno", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 2, 3, "quiero devolucion", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 2, 1, "malo", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 2, 10, "muy bueno", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 2, 9, "quiero devolucion", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 2, 8, "malo", DEFAULT, DEFAULT, DEFAULT);
  
 	/* comentarios del 3 */
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 3, 7, "recomendable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 3, 6, " no recomendable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 3, 5, "lindo", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 3, 4, "recomendable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 3, 2, " no recomendable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 3, 1, "lindo", DEFAULT, DEFAULT, DEFAULT);
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
+ VALUES (DEFAULT , 3, 1, "lindo", DEFAULT, DEFAULT, DEFAULId
  
 	/* comentarios del  4 */
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 4, 10, "muy bueno", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 4, 9, "quiero devolucion", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 4, 8, "malo", DEFAULT, DEFAULT, DEFAULT);
  
-  INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+  INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 4, 7, "muy bueno", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 4, 6, "quiero devolucion", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 4, 5, "malo", DEFAULT, DEFAULT, DEFAULT);
  
- 
-
 	/* comentarios del  5 */
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 5, 4, "recomendable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 5, 3, " no recomendable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 5, 2, "lindo", DEFAULT, DEFAULT, DEFAULT);
  
-  INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+  INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 5, 1, "recomendable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 5, 10, " no recomendable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO comentarios (id, usuarios_id, productos_id,  texto_comentario, createdAt, updatedAt, deletedAt)
+ INSERT INTO comentarios (id, usuariosId, productosId,  texto_comentario, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 5, 9, "lindo", DEFAULT, DEFAULT, DEFAULT);
