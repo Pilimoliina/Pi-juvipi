@@ -20,7 +20,7 @@ CREATE TABLE usuarios (
 
 CREATE TABLE productos (
 	id 					INT 			UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    usuarios_id			INT				UNSIGNED,
+    usuariosId			INT				UNSIGNED,
     nombre 				VARCHAR(250) 	NOT NULL,
 	foto 				VARCHAR(250) 	NOT NULL,
     descripcion 		VARCHAR(500)	NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE comentarios (
     deletedAt			TIMESTAMP 		NULL,
 
     
-    FOREIGN KEY (usuarios_id) REFERENCES usuarios(id),
+    FOREIGN KEY (usuariosId) REFERENCES usuarios(id),
 	FOREIGN KEY (productos_id) REFERENCES productos(id)
 );
 
@@ -63,34 +63,34 @@ CREATE TABLE comentarios (
  VALUES (DEFAULT , "federico", "matz", "fede@gmail.com", "fede", "***", "2004-07-12", 45200450,"fotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
  
  /* INSERTANDO PRODUCTOS */
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 1, "celular", "fotoProducto.png", "dispositivo inalámbrico electrónico ", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 1, "computadora", "fotoProducto.png", "máquina digital programable", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 2, "ipad", "fotoProducto.png", " dispositivo informático móvil en el que la pantalla táctil ocupa casi todo su tamaño", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 2, "airpods", "fotoProducto.png", "auriculares inalámbricos", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 3, "apple pencil", "fotoProducto.png", "lapiz para pantalla tactil", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 3, "tv", "fotoProducto.png", "sistema para la transmisión y recepción de imágenes y sonidos a distancia que simulan movimientos", DEFAULT, DEFAULT, DEFAULT);
 
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 4, "cafetera", "fotoProducto.png", " maquina destinada a la preparación del café y recipiente para servirlo", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 4, "heladera", "fotoProducto.png", " electrodoméstico que genera frío para posibilitar la conservación de los alimentos y de otros productos.", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 5, "microondas", "fotoProducto.png", " electrodoméstico destinado a cocinar o calentar alimentos ", DEFAULT, DEFAULT, DEFAULT);
  
- INSERT INTO productos (id, usuarios_id, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
+ INSERT INTO productos (id, usuariosId, nombre,  foto,  descripcion, createdAt, updatedAt, deletedAt)
  VALUES (DEFAULT , 5, "air fryer", "fotoProducto.png", "  es un electrodoméstico que te permite cocer o freír los alimentos sin necesidad de sumergirlos en aceite, ", DEFAULT, DEFAULT, DEFAULT);
 
   /* INSERTANDO COMENTARIOS */

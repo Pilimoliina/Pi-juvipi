@@ -10,16 +10,16 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true,
             type: DataTypes.INTEGER
         },
-        idUsuario:{
+        usuariosId:{
             type: DataTypes.STRING
         },
-        fotoproducto:{
+        foto:{
             type: DataTypes.STRING
         },
-        nombreProducto:{
+        nombre:{
             type: DataTypes.STRING
         },
-        descripcionProducto:{
+        descripcion:{
             type: DataTypes.STRING
         },
         createdAt:{
@@ -36,20 +36,20 @@ module.exports = function (sequelize, DataTypes) {
         /* Config de la tabla */
         let config = {
             tableName: "productos",
-            timestamps: false,
-            underscored: true
+            timestamps: true,
+            underscored: false
         }
     
         let Producto = sequelize.define(alias, cols, config);
         Producto.associate = function(models) {
             Producto.belongsTo(models.Usuario, {
                 as: "usuario",
-                foreignKey: "usuarios_id"
+                foreignKey: "usuariosId"
             });
     
             Producto.hasMany(models.Comentario, {
                  as: "comentarios",
-                 foreignKey: "productos_id"
+                 foreignKey: "productosId"
              });
         }
         
