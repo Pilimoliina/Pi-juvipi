@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER
         },
         usuariosId:{
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER
         },
         foto:{
             type: DataTypes.STRING
@@ -37,19 +37,19 @@ module.exports = function (sequelize, DataTypes) {
         let config = {
             tableName: "productos",
             timestamps: true,
-            underscored: false
+            underscored: true
         }
     
         let Producto = sequelize.define(alias, cols, config);
         Producto.associate = function(models) {
             Producto.belongsTo(models.Usuario, {
-                as: "usuario",
+                as: "Usuario",
                 foreignKey: "usuariosId"
             });
     
             Producto.hasMany(models.Comentario, {
-                 as: "comentarios",
-                 foreignKey: "productosId"
+                 as: "Comentario",
+                //  foreignKey: "productosId"
              });
         }
         
