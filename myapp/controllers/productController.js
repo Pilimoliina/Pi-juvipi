@@ -20,6 +20,7 @@ const productController = {
                 return console.log(errores);
             })
     },
+    
     product_add: function (req, res) {
         res.render('productAdd', { lista: mercadolibre });
     },
@@ -41,13 +42,13 @@ const productController = {
                 }]
         })
 
-            .then(function (resultado) {
-                return res.render("productos", { lista: resultado })
+            // .then(function (resultado) {
+            //     return res.render("productos", { lista: resultado })
 
-            }).catch(function (errores) {
-                return console.log(errores);;
+            // }).catch(function (errores) {
+            //     return console.log(errores);;
 
-            })
+            // })
     },
 
     search: function (req, res, next) {
