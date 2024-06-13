@@ -3,11 +3,11 @@ const mercadolibre = require("../database/models");
 
 let indexController = {
     index: function (req, res) {
-       mercadolibre.Producto.findAll({ 
-        include: [
-            { association: "Usuario" },
-            { association: "Comentario" }
-         ] }
+       mercadolibre.Producto.findAll(//{ 
+       // include: [
+         //   { association: "usuarios" },
+         //   { association: "comentarios" }
+       //  ] }
           )
         
      
@@ -19,12 +19,12 @@ let indexController = {
           return console.log(errores);
      })
     },
-     // login: function (req, res) {
-     //     res.render('login', { title: 'login' });
-     // },
-     //register: function (req, res) {
-     //  res.render('register', { title: 'register' });
-     // },
+      login: function (req, res) {
+          res.render('login', { title: 'login' });
+      },
+     register: function (req, res) {
+       res.render('register', { title: 'register' });
+      },
 };
 
 module.exports = indexController;
