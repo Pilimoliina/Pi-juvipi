@@ -1,24 +1,25 @@
 const mercadolibre = require("../database/models");
 
 const productController = {
+    
     index: function (req,res) {
-        mercadolibre.Producto.findAll({
+    let id = req.params.id
+        let func = {
             include: [
-                {association: "Usuario"},
-                {association: "Comentario"}
+                {association: "Comentario", include: [{association: "Usuario"}]},
+                {association: "Usuario"}
 ]
-})
+        }
 
-    .then(function(resultado) {
+        mercadolibre.Producto.findByPk(id, func)
 
-        return res.render("index",{lista: resultado})
+        .then(function(resultado) {
+            return res.render("index",{mercadolibre: resultado})
 
-    }).catch(function(errores) {
-
-
-                return console.log(errores);
-            })
-    },
+        }).catch(function(errores) {
+                    return console.log(errores);
+                })
+        },
     
     product_add: function (req, res) {
    res.render('productAdd', { lista: mercadolibre });
@@ -41,17 +42,17 @@ productInfo: function (req,res) {
     })
 
 
-            // .then(function (resultado) {
-            //     return res.render("productos", { lista: resultado })
+            .then(function (resultado) {
+               return res.render("productos", { lista: resultado })
 
-            // }).catch(function (errores) {
-            //     return console.log(errores);;
+             }).catch(function (errores) {
+                return console.log(errores);;
 
-            // })
+             })
     },
 
     search: function(req,res, next) {
-        return res.render("productos", {lista: productos})
+        return res.render("search", {lista: mercadolibre})
     }
 };
 
