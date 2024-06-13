@@ -1,30 +1,35 @@
 const mercadolibre = require("../database/models");
 
-
-let indexController = {
+const indexController = {
     index: function (req, res) {
-       mercadolibre.Producto.findAll(//{ 
-       // include: [
-         //   { association: "usuarios" },
-         //   { association: "comentarios" }
-       //  ] }
-          )
-        
-     
+      let func = {
+        include: [
+            {association: "usuarios"},
+            {association: "comentarios"},
 
+        ]
+    }
+       
+      mercadolibre.Producto.findAll(criterio)
              //return res.render('index', {lista: mercadolibre.product});
      .then(function (resultado) {
-          return res.render("index", { lista: mercadolibre })
+          return res.send(resultado)
+
      }).catch(function (errores) {
           return console.log(errores);
      })
+       res.render("index", { lista: mercadolibre })
     },
-      login: function (req, res) {
-          res.render('login', { title: 'login' });
-      },
-     register: function (req, res) {
-       res.render('register', { title: 'register' });
-      },
+
+    //   login: function (req, res) {
+    //       res.render('login', { title: 'login' });
+    //   },
+    //  register: function (req, res) {
+    //    res.render('register', { title: 'register' });
+    //   },
 };
 
 module.exports = indexController;
+
+
+
