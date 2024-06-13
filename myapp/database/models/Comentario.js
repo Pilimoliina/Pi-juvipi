@@ -27,19 +27,19 @@ module.exports = function (sequelize, DataTypes) {
 
     let config = {
         tableName: "comentarios",
-        timestamps: true,
-        underscored: true
+        timestamps: false,
+        underscored: false
     };
 
     let Comentario = sequelize.define(alias, cols, config);
     Comentario.associate = function (models){
         Comentario.belongsTo(models.Usuario,{
-            as: "Usuario",
+            as: "usuarios",
             foreignKey: "usuariosId"
         });
 
     Comentario.belongsTo(models.Producto,{
-            as: "Producto",
+            as: "productos",
             foreignKey: "productosId"
         });
     }

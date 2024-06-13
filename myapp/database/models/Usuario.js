@@ -43,22 +43,22 @@ module.exports = function (sequelize, DataTypes) {
     let config = {
         tableName: "usuarios",
         timestamps: false, //Aclaración en caso de no explicitar created_at, deleted_at y updated_at
-        underscored: true, //Aclaración en caso que los timestamps usen guiones bajos en lugar de camelCase.
+        underscored: false, //Aclaración en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
-    const Usuario = sequelize.define(alias, cols, config);
-    Usuario.associate = function (models) {
-        Usuario.hasMany(models.Producto, {
-            as: "Producto",
-            //foreignKey: "usuariosId"
+    let Usuarios = sequelize.define(alias, cols, config);
+    Usuarios.associate = function (models) {
+        Usuarios.hasMany(models.Producto, {
+            as: "productos",
+            foreignKey: "usuariosId"
         });
-//        Usuario.hasMany(models.Comentario, {
-//            as: "Comentario",
-         //   foreignKey: "usuariosId"
-//        });
+        Usuarios.hasMany(models.Comentario, {
+           as: "comentarios",
+           foreignKey: "usuariosId"
+       });
     }
 
 
-    return Usuario;
+    return Usuarios;
 
 }
