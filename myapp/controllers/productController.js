@@ -22,7 +22,7 @@ const productController = {
         },
     
     product_add: function (req, res) {
-   res.render('productAdd', { lista: mercadolibre });
+        res.render('productAdd', { lista: mercadolibre });
     },
     product: function(req,res){
         res.render('product', { lista: mercadolibre});

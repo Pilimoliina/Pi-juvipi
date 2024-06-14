@@ -11,9 +11,10 @@ const indexController = {
     }
        
       mercadolibre.Producto.findAll(func)
-             //return res.render('index', {lista: mercadolibre.product});
+             //return res.send({  lista : resultado});
+
      .then(function (resultado) {
-          return res.send(resultado)
+          return res.render("index", {lista: resultado})
 
      }).catch(function (errores) {
           return console.log(errores);
@@ -21,11 +22,11 @@ const indexController = {
        res.render("index", { lista: mercadolibre })
     },
 
-       login: function (req, res) {
-           res.render('login', { title: 'login' });
-       },
-      register: function (req, res) {
-        res.render('register', { title: 'register' });
+        login: function (req, res) {
+            res.render('login', { title: 'login' });
+        },
+       register: function (req, res) {
+           res.render('register', { title: 'register' });
        },
 };
 
