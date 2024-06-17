@@ -25,6 +25,9 @@ module.exports = function (sequelize, DataTypes) {
         contrasenia: {
             type: DataTypes.STRING
         },
+        foto:{
+            type: DataTypes.STRING
+        },
         //  remember_token: {
         //      type: dataTypes.STRING
         // },
@@ -42,7 +45,7 @@ module.exports = function (sequelize, DataTypes) {
 
     let config = {
         tableName: "usuarios",
-        timestamps: false, //Aclaración en caso de no explicitar created_at, deleted_at y updated_at
+        timestamps: true, //Aclaración en caso de no explicitar created_at, deleted_at y updated_at
         underscored: false, //Aclaración en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
@@ -50,11 +53,11 @@ module.exports = function (sequelize, DataTypes) {
     Usuarios.associate = function (models) {
         Usuarios.hasMany(models.Producto, {
             as: "productos",
-            foreignKey: "usuariosId"
+           // foreignKey: "usuariosId"
         });
         Usuarios.hasMany(models.Comentario, {
            as: "comentarios",
-           foreignKey: "usuariosId"
+           //foreignKey: "usuariosId"
        });
     }
 

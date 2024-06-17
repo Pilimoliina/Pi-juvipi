@@ -1,22 +1,25 @@
 let mercadolibre = require("../database/models");
 
 let usersController = {
-    profile : function (req, res) {
-           res.send('profile', {lista: mercadolibre.usuario,
-                                 lista: mercadolibre.product  });
+    profile: function (req, res) {
+        res.render('profile', { lista: mercadolibre } );
 
-        let id = req.params.id
-        mercadolibre.Usuario.findByPk(id)
-        .then(function (resultado) {
-          return res.send(resultado);
-        }).catch(function (error) {
-          return console.log(error); ;
-        })
+        // let id = req.params.id
+        // mercadolibre.Usuario.findByPk(id)
+        //     .then(function (resultado) {
+        //         return res.send(resultado);
+        //     }).catch(function (error) {
+        //         return console.log(error);;
+        //     })
     },
-    profile_edit : function (req, res) {
-        // res.render('profile_edit', {lista: mercadolibre.usuario,
-        //     lista: mercadolibre });
+    profileEdit: function (req, res) {
+        res.render('profileEdit', {lista: mercadolibre,});
     },
-
+    login: function (req, res) {
+        return res.render('login');
+    },
+    register: function (req, res) {
+        return res.render('register');
+    },
 };
 module.exports = usersController;

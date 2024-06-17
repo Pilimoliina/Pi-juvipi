@@ -8,9 +8,10 @@ var usersController = require('../controllers/usersController');
   res.send('respond with a resource');
 });*/
 
-router.get('/',usersController.profile);
+router.get('/login',usersController.login);
+router.get('/register',usersController.register);
 router.get('/profile',usersController.profile);
-router.get('/profile_edit',usersController.profile_edit);
+router.get('/profileEdit',usersController.profileEdit);
 
 
 module.exports = router;
