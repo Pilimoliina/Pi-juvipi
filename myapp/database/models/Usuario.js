@@ -49,19 +49,19 @@ module.exports = function (sequelize, DataTypes) {
         underscored: false, //Aclaración en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
-    let Usuarios = sequelize.define(alias, cols, config);
-    Usuarios.associate = function (models) {
-        Usuarios.hasMany(models.Producto, {
+    let Usuario = sequelize.define(alias, cols, config);
+    Usuario.associate = function (models) {
+        Usuario.hasMany(models.Producto, {
             as: "productos",
-           // foreignKey: "usuariosId"
+            foreignKey: "usuariosId"
         });
-        Usuarios.hasMany(models.Comentario, {
+        Usuario.hasMany(models.Comentario, {
            as: "comentarios",
-           //foreignKey: "usuariosId"
+           foreignKey: "usuariosId"
        });
     }
 
 
-    return Usuarios;
+    return Usuario;
 
 }

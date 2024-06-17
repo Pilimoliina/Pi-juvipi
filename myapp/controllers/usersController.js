@@ -15,11 +15,6 @@ let usersController = {
     profileEdit: function (req, res) {
         res.render('profileEdit', {lista: mercadolibre});
     },
-    login: function (req, res) {
-        return res.render('login');
-    },
-    register: function (req, res) {
-        return res.render('register');
-    },
+   
 };
 module.exports = usersController;
