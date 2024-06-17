@@ -36,11 +36,11 @@ module.exports = function (sequelize, DataTypes) {
         /* Config de la tabla */
         let config = {
             tableName: "productos",
-            timestamps: true,
+            timestamps: false,
             underscored: false,
         };
     
-        let Producto = sequelize.define(alias, cols, config);
+        const Producto = sequelize.define(alias, cols, config);
         Producto.associate = function(models) {
             Producto.belongsTo(models.Usuario, {
                 as: "usuarios",
