@@ -1,25 +1,23 @@
 const mercadolibre = require("../database/models");
 
 const productController = {
-    
-    index: function (req,res) {
-    let id = req.params.id
-        let func = {
-            include: [
-                {association: "Comentario", include: [{association: "Usuario"}]},
-                {association: "Usuario"}
-]
-        }
+    index: function (req, res) {
+        mercadolibre.Producto.findAll({
+             include: [
+                  { association: "comentarios" },
+                  { association: "usuarios" }
+             ]
+        })
+             .then(function (resultado) {
+                  return res.render('index', { lista: resultado });
 
-        mercadolibre.Producto.findByPk(id, func)
+             }).catch(function (errores) {
+                  return console.log(errores);
 
-        .then(function(resultado) {
-            return res.render("index",{mercadolibre: resultado})
+             })
+  },
 
-        }).catch(function(errores) {
-                    return console.log(errores);
-                })
-        },
+
     
     product_add: function (req, res) {
         res.render('productAdd', { lista: mercadolibre });
@@ -35,9 +33,9 @@ productInfo: function (req,res) {
     let Id = req.params.id
     mercadolibre.Producto.findByPk(Id, {
         include: [
-            {association: "Usuario"},
-            {association: "Comentario",
-                include: [{association: "Usuario"}]
+            {association: "usuarios"},
+            {association: "comentarios",
+                include: [{association: "usuarios"}]
             }]
     })
 
