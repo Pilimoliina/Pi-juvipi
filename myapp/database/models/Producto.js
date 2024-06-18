@@ -12,11 +12,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         usuariosId:{
             type: DataTypes.INTEGER
-        },
-        foto:{
+        },       
+        nombre:{
             type: DataTypes.STRING
         },
-        nombre:{
+        foto:{
             type: DataTypes.STRING
         },
         descripcion:{
