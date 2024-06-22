@@ -43,10 +43,7 @@ router.get('/', indexController.index);
 router.get('/login', indexController.login);
 router.get('/register', indexController.register);
 router.post('/register', validation, indexController.store);
-<<<<<<< HEAD
 router.post("/login", validation, indexController.loginUser)
-=======
->>>>>>> f4f3a269abd2a7a0f126504dc0a89c5980dfb7d4
-
+router.post('/logout',  indexController.logout);
 
 module.exports = router;

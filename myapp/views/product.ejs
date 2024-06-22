@@ -2,11 +2,11 @@
 
 	<body>
 		<!-- Header -->
-		<%- if (locals.user !=undefined) { %>
-			<%- include ('./partials/headerLogueado') %>
-				<% } else { %>
-					<%- include ('./partials/header') %>
-						<%} %>
+		<% if (locals.user != undefined) { %>
+			<%- include('./partials/headerLogueado') %>
+		 <% } else { %>
+			<%- include('./partials/header') %>
+		<% } %>
 		<!-- /Header -->
 		<!-- product detail -->
 		<div class="container products-wrapper">
@@ -14,7 +14,7 @@
 			<div class="d-flex align-items-center">
 				<h2 class="products-title"> <%= lista[2].nombre %> </h2> 
 				<p class="product-detail-description">
-					<a href="/product/product_add">Editar</a>
+					<a href="/product/productAdd">Editar</a>
 				</p>
 			</div>
 			
