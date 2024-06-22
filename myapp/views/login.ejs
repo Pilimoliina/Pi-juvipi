@@ -1,10 +1,14 @@
 
 <body>
+<<<<<<< HEAD
 	<%- if (locals.user !=undefined) { %>
 		<%- include ('./partials/headerLogueado') %>
 			<% } else { %>
 				<%- include ('./partials/header') %>
 					<%} %>
+=======
+	<%- include('./partials/header') %>
+>>>>>>> f4f3a269abd2a7a0f126504dc0a89c5980dfb7d4
 
 
 	<!-- Novedades -->
@@ -15,9 +19,15 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
+<<<<<<< HEAD
 				<form action="/login" method="POST" class="form-todos">
 					<label for="email">Usuario:</label><br>
 					<input type="email" id="usuario" name="email" required><br><br>
+=======
+				<form action="/profile" method="get" class="form-todos">
+					<label for="usuario">Usuario:</label><br>
+					<input type="email" id="usuario" name="usuario" required><br><br>
+>>>>>>> f4f3a269abd2a7a0f126504dc0a89c5980dfb7d4
 
 
 					<label for="contraseña">Contraseña:</label><br>

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 CREATE SCHEMA proyectoo2;
 
 USE proyectoo2;
+=======
+CREATE SCHEMA progggg;
+
+USE progggg;
+>>>>>>> f4f3a269abd2a7a0f126504dc0a89c5980dfb7d4
 
 CREATE TABLE usuarios (
 /*  nombreColumna       tipoDato        Restricciones */

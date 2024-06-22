@@ -82,6 +82,7 @@ let indexController = {
        } else {
            res.render('register', {error: error.mapped(), old: req.body})
            }
+<<<<<<< HEAD
        },
        loginUser: (req, res)=>{
         let form = req.body;
@@ -123,10 +124,19 @@ mercadolibre.Usuario.findOne(filtro)
     
     
       },
+=======
+       }
+
+
+>>>>>>> f4f3a269abd2a7a0f126504dc0a89c5980dfb7d4
 };
 
+
 module.exports = indexController;
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> f4f3a269abd2a7a0f126504dc0a89c5980dfb7d4
