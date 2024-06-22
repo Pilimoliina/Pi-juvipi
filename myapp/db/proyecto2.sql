@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-CREATE SCHEMA proyectoo2;
 
-USE proyectoo2;
-=======
 CREATE SCHEMA progggg;
 
 USE progggg;
