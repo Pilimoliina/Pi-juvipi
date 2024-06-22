@@ -1,48 +1,57 @@
 
 
-	<body>
-
-		<!-- Header -->
-		<%- include('./partials/headerLogueado') %>
-		<!-- /Header -->
-
-		<!-- Novedades -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Editar mi perfil</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<h2 class="col-12"> 
-					<form action="/profile" method="get" class="form-todos">
-						<label for="nombre">Email:</label><br>
-						<input type="email" id="nombre" name="email" value="mvm@gmail.com" required><br><br>
-				
-						<label for="apellido">Usuario:</label><br>
-						<input type="text" id="usuario" name="usuario" value="vicqueen" required><br><br>
-
-						<label for="nacimiento">Fecha de nacimiento:</label><br>
-						<input type="date" name="fechaN" id="nacimiento" required><br><br>
-
-						<label for="doc">Numero de documento:</label><br>
-						<input type="number" name="numeroD" id="doc" value="46240453" required><br><br>
-				
-						<label for="foto">Foto de perfil:</label><br>
-						<input type="file" id="imagen" name="imagen" accept="image/*" required><br><br>
-				
-						<label for="contraseña">Contraseña:</label><br>
-						<input type="password" id="contraseña" name="contraseña" required><br><br>
-				
-						<label for="confirmar_contraseña">Confirmar Contraseña:</label><br>
-						<input type="password" id="confirmar_contraseña" name="confirmar_contraseña" required><br><br>
-				
-						<input type="submit" value="Guardar Cambios">
-					</form>
-				</h2>
+<body>
 
 
-		<!-- footer -->
-		<%- include('./partials/footer') %>
-		<!-- footer -->
-	</body>
+	<!-- Header -->
+	<%- if (locals.user !=undefined) { %>
+		<%- include ('./partials/headerLogueado') %>
+			<% } else { %>
+				<%- include ('./partials/header') %>
+					<%} %>
+	<!-- /Header -->
 
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Editar mi perfil</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<h2 class="col-12">
+				<form action="/profile" method="get" class="form-todos">
+					<label for="nombre">Email:</label><br>
+					<input type="email" id="nombre" name="email" value="mvm@gmail.com" required><br><br>
+		   
+					<label for="apellido">Usuario:</label><br>
+					<input type="text" id="usuario" name="usuario" value="vicqueen" required><br><br>
+
+
+					<label for="nacimiento">Fecha de nacimiento:</label><br>
+					<input type="date" name="fechaN" id="nacimiento" required><br><br>
+
+
+					<label for="doc">Numero de documento:</label><br>
+					<input type="number" name="numeroD" id="doc" value="46240453" required><br><br>
+		   
+					<label for="foto">Foto de perfil:</label><br>
+					<input type="file" id="imagen" name="imagen" accept="image/*" required><br><br>
+		   
+					<label for="contraseña">Contraseña:</label><br>
+					<input type="password" id="contraseña" name="contraseña" required><br><br>
+		   
+					<label for="confirmar_contraseña">Confirmar Contraseña:</label><br>
+					<input type="password" id="confirmar_contraseña" name="confirmar_contraseña" required><br><br>
+		   
+					<input type="submit" value="Guardar Cambios">
+				</form>
+			</h2>
+
+
+
+
+	<!-- footer -->
+	<%- include('./partials/footer') %>
+	<!-- footer -->
+</body>

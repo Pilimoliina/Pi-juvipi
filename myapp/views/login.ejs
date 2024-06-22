@@ -1,33 +1,42 @@
 
+<body>
+	<%- if (locals.user !=undefined) { %>
+		<%- include ('./partials/headerLogueado') %>
+			<% } else { %>
+				<%- include ('./partials/header') %>
+					<%} %>
 
-	<body>
-		<%- include('./partials/header') %>
 
-		<!-- Novedades -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Ingresar</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<h2 class="col-12"> 
-					<form action="/profile" method="get" class="form-todos">
-						<label for="usuario">Usuario:</label><br>
-						<input type="email" id="usuario" name="usuario" required><br><br>
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ingresar</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<h2 class="col-12">
+				<form action="/login" method="POST" class="form-todos">
+					<label for="email">Usuario:</label><br>
+					<input type="email" id="usuario" name="email" required><br><br>
 
-						<label for="contraseña">Contraseña:</label><br>
-						<input type="password" id="contra" name="contra" required><br><br>
 
-						<input type="checkbox" id="recordarme" name="recordarme">
-						<label for="recordarme">Recordarme</label><br><br>
+					<label for="contraseña">Contraseña:</label><br>
+					<input type="password" id="contra" name="contra" required><br><br>
 
-						<input type="submit" value="Iniciar Sesión">
 
-					</form>
-				</h2>
+					<input type="checkbox" id="recordarme" name="recordarme">
+					<label for="recordarme">Recordarme</label><br><br>
 
-		<!-- footer -->
-		<%- include('./partials/footer') %>
-		<!-- footer -->
-	</body>
+
+					<input type="submit" value="Iniciar Sesión">
+
+
+				</form>
+			</h2>
+
+
+	<!-- footer -->
+	<%- include('./partials/footer') %>
+	<!-- footer -->
+</body>
 

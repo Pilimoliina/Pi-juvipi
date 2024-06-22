@@ -1,38 +1,47 @@
-	<body>	
-		<!-- Header -->
-		<%- include('./partials/header') %>
-		<!-- /Header -->
-		<!-- Banner -->
-		<div class="banner">
-			<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
-		</div>
-		<!-- /Banner -->
+<body>
+	<!-- Header -->
+	<%- if (locals.user !=undefined) { %>
+		<%- include ('./partials/headerLogueado') %>
+			<% } else { %>
+				<%- include ('./partials/header') %>
+					<%} %>
+						<!-- /Header -->
+						<!-- Banner -->
+						<div class="banner">
+							<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+						</div>
+						<!-- /Banner -->
 
-		<!-- Novedades -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Novedades</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<% for (let i = 0; i < lista.length; i++) { %>
+						<!-- Novedades -->
+						<div class="container products-wrapper">
+							<div class="row">
+								<div class="col-12">
+									<h2 class="products-title">Novedades</h2>
+								</div>
+								<!-- Show the "ultimos" products -->
+								<% for (let i=0; i < lista.length; i++) { %>
 
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/product">
-							<figure class="product-box_image">
-								<img src="<%= lista[i].foto %> " alt="<%= lista[i].foto %>">
-							</figure>
-							<article class="product-box_data">
-								<h2><%= lista[i].nombre %></h2>
-								<p><%= lista[i].descripcion %></p>
-								<p>Comentarios: <%= lista[i].comentarios.length %></p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<% } %>
-				<!-- <div class="col-12 col-sm-6 col-lg-3">
+									<div class="col-12 col-sm-6 col-lg-3">
+										<section class="product-box">
+											<a href="/product">
+												<figure class="product-box_image">
+													<img src="<%= lista[i].foto %> " alt="<%= lista[i].foto %>">
+												</figure>
+												<article class="product-box_data">
+													<h2>
+														<%= lista[i].nombre %>
+													</h2>
+													<p>
+														<%= lista[i].descripcion %>
+													</p>
+													<p>Comentarios: <%= lista[i].comentarios.length %>
+													</p>
+												</article>
+											</a>
+										</section>
+									</div>
+									<% } %>
+										<!-- <div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/product">
 							<figure class="product-box_image">
@@ -79,30 +88,36 @@
 				</div>
 			</div>
 		</div> -->
-		<!-- /Novedades -->
-		<!-- Más comentados -->
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Mas comentados</h2>
-			</div>
-		<% for (let i = 0; i < lista.length; i++) { %>
+										<!-- /Novedades -->
+										<!-- Más comentados -->
+										<div class="row">
+											<div class="col-12">
+												<h2 class="products-title">Mas comentados</h2>
+											</div>
+											<% for (let i=0; i < lista.length; i++) { %>
 
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%= lista[i].foto %>" alt="<%= lista[i].foto %>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%= lista[i].nombre %></h2>
-							<p><%= lista[i].descripcion %></p>
-							<p>Comentarios: <%= lista[i].comentarios.length %></p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<% } %>
-				<!-- <div class="col-12 col-sm-6 col-lg-3">
+												<div class="col-12 col-sm-6 col-lg-3">
+													<section class="product-box">
+														<a href="/product">
+															<figure class="product-box_image">
+																<img src="<%= lista[i].foto %>"
+																	alt="<%= lista[i].foto %>">
+															</figure>
+															<article class="product-box_data">
+																<h2>
+																	<%= lista[i].nombre %>
+																</h2>
+																<p>
+																	<%= lista[i].descripcion %>
+																</p>
+																<p>Comentarios: <%= lista[i].comentarios.length %>
+																</p>
+															</article>
+														</a>
+													</section>
+												</div>
+												<% } %>
+													<!-- <div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/product">
 							<figure class="product-box_image">
@@ -144,14 +159,14 @@
 						</a>
 					</section>
 				</div> -->
-			</div>
-		</div>
-		<!-- /Más comentados -->
+										</div>
+							</div>
+							<!-- /Más comentados -->
 
-		<!-- footer -->
-		<%- include('./partials/footer') %>
-		<!-- footer -->
+							<!-- footer -->
+							<%- include('./partials/footer') %>
+								<!-- footer -->
 
-</body>	
+</body>
+
 </html>
-

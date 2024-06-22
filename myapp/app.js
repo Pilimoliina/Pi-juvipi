@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session')
+const mercadolibre = require("./database/models")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -20,6 +22,37 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session( { secret: "Mensaje secreto",
+				resave: false,
+				saveUninitialized: true }));
+
+
+app.use(function(req, res, next) {
+  if (req.session.user != undefined) {
+    res.locals.user = req.session.user;
+  } 
+  return next();
+});
+
+app.use(function(req, res, next) {
+
+  if (req.cookies.usuariosId != undefined && req.session.user == undefined) {
+    let usuariosId = req.cookies.usuariosId; 
+
+    mercadolibre.Usuario.findByPk(usuariosId)
+    .then((resultado) => {
+      req.session.user = resultado;
+      res.locals.user = resultado;
+      return next();
+    }).catch((error) => {
+      return console.log(error);
+    });
+
+  } else {
+    return next();
+  }
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
