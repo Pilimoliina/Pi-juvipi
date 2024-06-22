@@ -1,5 +1,5 @@
 const mercadolibre = require("../database/models");
-const data = require ("../db/dataBase")
+const lista = require ("../db/dataBase")
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 

@@ -1,6 +1,6 @@
-CREATE SCHEMA programacionnII;
+CREATE SCHEMA pepito;
 
-USE programacionnII;
+USE pepito;
 
 CREATE TABLE usuarios (
 /* 	nombreColumna 		tipoDato 		Restricciones */
@@ -48,50 +48,50 @@ CREATE TABLE comentarios (
 
 /* INSERTANDO USUARIOS */
  INSERT INTO usuarios (id, nombre, apellido, email, usuario, contrasenia, fechaNacimiento, numeroDocumento, foto, createdAt,updatedAt,deletedAt)
- VALUES (DEFAULT , "victoria", "maldonado", "mvm@gmail.com", "vicqueen", "***", "2004-09-27", 46240453,"VfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , "victoria", "maldonado", "mvm@gmail.com", "vicqueen", "***", "2004-09-27", 46240453,"/images/users/VfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO usuarios (id, nombre, apellido, email, usuario, contrasenia, fechaNacimiento, numeroDocumento, foto, createdAt,updatedAt,deletedAt)
- VALUES (DEFAULT , "pilar", "molina", "pili@gmail.com", "pilipro", "***", "2005-02-05", 46211111,"PfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , "pilar", "molina", "pili@gmail.com", "pilipro", "***", "2005-02-05", 46211111,"/images/users/PfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO usuarios (id, nombre, apellido, email, usuario, contrasenia, fechaNacimiento, numeroDocumento, foto, createdAt,updatedAt,deletedAt)
- VALUES (DEFAULT , "julia", "dube", "julia@gmail.com", "julita", "***", "2005-06-04", 46340456,"JfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , "julia", "dube", "julia@gmail.com", "julita", "***", "2005-06-04", 46340456,"/images/users/JfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO usuarios (id, nombre, apellido, email, usuario, contrasenia, fechaNacimiento, numeroDocumento, foto, createdAt,updatedAt,deletedAt)
- VALUES (DEFAULT , "agustina", "vera", "agus@gmail.com", "agustina", "***", "2005-12-12", 46000000,"AfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , "agustina", "vera", "agus@gmail.com", "agustina", "***", "2005-12-12", 46000000,"/images/users/AfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO usuarios (id, nombre, apellido, email, usuario, contrasenia, fechaNacimiento, numeroDocumento, foto, createdAt,updatedAt,deletedAt)
- VALUES (DEFAULT , "federico", "matz", "fede@gmail.com", "fede", "***", "2004-07-12", 45200450,"FfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , "federico", "matz", "fede@gmail.com", "fede", "***", "2004-07-12", 45200450,"/images/users/FfotoPerfil.png",DEFAULT, DEFAULT, DEFAULT);
  
  /* INSERTANDO PRODUCTOS */
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 1, "celular", "celu.jpg", "dispositivo inalámbrico electrónico ", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 1, "celular", "/images/products/celu.jpg", "dispositivo inalámbrico electrónico ", DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 1, "computadora", "compu.jpg", "máquina digital programable", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 1, "computadora", "/images/products/compu.jpg", "máquina digital programable", DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 2, "ipad", "ipad.jpg", " dispositivo informático móvil en el que la pantalla táctil ocupa casi todo su tamaño", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 2, "ipad", "/images/products/ipad.jpg", " dispositivo informático móvil en el que la pantalla táctil ocupa casi todo su tamaño", DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 2, "airpods", "airpods.jpg", "auriculares inalámbricos", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 2, "airpods", "/images/products/airpods.jpg", "auriculares inalámbricos", DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 3, "apple pencil", "applePencil.jpg", "lapiz para pantalla tactil", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 3, "apple pencil", "/images/products/applePencil.jpg", "lapiz para pantalla tactil", DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 3, "tv", "tv.jpg", "sistema para la transmisión y recepción de imágenes y sonidos a distancia que simulan movimientos", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 3, "tv", "/images/products/tv.jpg", "sistema para la transmisión y recepción de imágenes y sonidos a distancia que simulan movimientos", DEFAULT, DEFAULT, DEFAULT);
 
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 4, "cafetera", "cafetera.jpg", " maquina destinada a la preparación del café y recipiente para servirlo", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 4, "cafetera", "/images/products/cafetera.jpg", " maquina destinada a la preparación del café y recipiente para servirlo", DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 4, "heladera", "heladera.jpg", " electrodoméstico que genera frío para posibilitar la conservación de los alimentos y de otros productos.", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 4, "heladera", "/images/products/heladera.jpg", " electrodoméstico que genera frío para posibilitar la conservación de los alimentos y de otros productos.", DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 5, "microondas", "microondas.jpg", " electrodoméstico destinado a cocinar o calentar alimentos ", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 5, "microondas", "/images/products/microondas.jpg", " electrodoméstico destinado a cocinar o calentar alimentos ", DEFAULT, DEFAULT, DEFAULT);
  
  INSERT INTO productos (id, usuariosId, nombreProducto,  fotoProducto,  descripcion, createdAt, updatedAt, deletedAt)
- VALUES (DEFAULT , 5, "air fryer", "airfryer.jpg", "  es un electrodoméstico que te permite cocer o freír los alimentos sin necesidad de sumergirlos en aceite, ", DEFAULT, DEFAULT, DEFAULT);
+ VALUES (DEFAULT , 5, "air fryer", "/images/products/airfryer.jpg", "  es un electrodoméstico que te permite cocer o freír los alimentos sin necesidad de sumergirlos en aceite, ", DEFAULT, DEFAULT, DEFAULT);
 
   /* INSERTANDO COMENTARIOS */
     /* comentarios del  1 */

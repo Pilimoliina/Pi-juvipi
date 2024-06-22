@@ -1,5 +1,4 @@
 
-
 	<body>
 		<!-- Header -->
 		<% if (locals.users != undefined) { %>
@@ -8,13 +7,14 @@
 			<%- include('./partials/header') %>
 		<% } %>
 		<!-- /Header -->
+		
 		<!-- product detail -->
 		<div class="container products-wrapper">
 			
 			<div class="d-flex align-items-center">
-				<h2 class="products-title"> <%= lista[2].nombre %> </h2> 
+				<h2 class="products-title"> <%= lista.nombreProducto %> </h2> 
 				<p class="product-detail-description">
-					<a href="/product/productAdd">Editar</a>
+					<a href="/product">Editar</a>
 				</p>
 			</div>
 			
@@ -23,19 +23,19 @@
 			<div class="product-detail">
 				<div class="row">
 					<article class="col-12 col-lg-8 product-detail-info">
-						<img src="<%= lista[2].foto %>" alt="" class="product-detail-img">
+						<img src="<%= lista.fotoProducto %>" alt="" class="product-detail-img">
 						<p class="product-detail-description">
-							<%= lista[2].descripcion %></p>
+							<%= lista.descripcion %></p>
 					</article>
 					<div class="col-12 col-lg-4">
 						<section class="comments">
 							<% for ( i = 0; i < 3; i++) { %>
 								<article>
-									<img src="<%= lista[2].comentarios[i].Foto%>" alt="">
+									<img src="<%= lista.comentarios[i].foto%>" alt="">
 									<div class="data">
 										<p class="users">
-										<strong> <a href="profile"> <%= lista[2].comentarios[i].usuario %> - <%= lista[i].comentarios.usuariosId %> </a> </strong> <br>
-										<%= lista[2].comentarios[i].texto_comentario %></p>
+										<strong> <a href="profile"> <%= lista.comentarios[i].usuario %> - <%= lista[i].comentarios.usuariosId %> </a> </strong> <br>
+										<%= lista.comentarios[i].textoComentario %></p>
 									</div>
 									
 								</article>

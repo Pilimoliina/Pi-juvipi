@@ -32,18 +32,24 @@ const productController = {
     },
 
 productInfo: function (req,res) {
-    let Id = req.params.id
-    mercadolibre.Producto.findByPk(Id, {
+
+    let session = req.session.users
+    let id = req.params.id
+    mercadolibre.Producto.findByPk(id, {
         include: [
             {association: "usuarios"},
             {association: "comentarios",
-                include: [{association: "usuarios"}]
-            }]
+                include: [{association: "usuarios"},
+                          {association: 'productos'}
+                        ]
+            }
+        ],
+        order: [[{model: mercadolibre.comentarios}, 'createdAt' , 'DESC']]
     })
 
 
             .then(function (resultado) {
-               return res.render("productos", { lista: resultado })
+               return res.render("product", { lista: resultado, session : session})
 
              }).catch(function (errores) {
                 return console.log(errores);;
