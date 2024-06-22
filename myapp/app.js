@@ -29,21 +29,21 @@ app.use(session( { secret: "Mensaje secreto",
 
 
 app.use(function(req, res, next) {
-  if (req.session.user != undefined) {
-    res.locals.user = req.session.user;
+  if (req.session.users != undefined) {
+    res.locals.users = req.session.users;
   } 
   return next();
 });
 
 app.use(function(req, res, next) {
 
-  if (req.cookies.usuariosId != undefined && req.session.user == undefined) {
+  if (req.cookies.usuariosId != undefined && req.session.users == undefined) {
     let usuariosId = req.cookies.usuariosId; 
 
     mercadolibre.Usuario.findByPk(usuariosId)
     .then((resultado) => {
-      req.session.user = resultado;
-      res.locals.user = resultado;
+      req.session.users = resultado;
+      res.locals.users = resultado;
       return next();
     }).catch((error) => {
       return console.log(error);

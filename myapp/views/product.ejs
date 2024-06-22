@@ -2,7 +2,7 @@
 
 	<body>
 		<!-- Header -->
-		<% if (locals.user != undefined) { %>
+		<% if (locals.users != undefined) { %>
 			<%- include('./partials/headerLogueado') %>
 		 <% } else { %>
 			<%- include('./partials/header') %>
@@ -33,7 +33,7 @@
 								<article>
 									<img src="<%= lista[2].comentarios[i].Foto%>" alt="">
 									<div class="data">
-										<p class="user">
+										<p class="users">
 										<strong> <a href="profile"> <%= lista[2].comentarios[i].usuario %> - <%= lista[i].comentarios.usuariosId %> </a> </strong> <br>
 										<%= lista[2].comentarios[i].texto_comentario %></p>
 									</div>

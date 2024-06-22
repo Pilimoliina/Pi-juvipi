@@ -7,7 +7,6 @@ const bcrypt = require("bcryptjs");
 
 
 
-
 let indexController = {
   index: function (req, res) {
     mercadolibre.Producto.findAll({
@@ -109,7 +108,7 @@ let indexController = {
         // Comparar la contraseña ingresada con la contraseña almacenada en la base de datos
         let check = bcrypt.compareSync(form.contra, resultado.contrasenia);
         if (check) {
-          req.session.user = resultado;
+          req.session.users = resultado;
 
           // Guardar en cookie si el usuario tildó la checkbox "Recordarme"
           if (form.recordarme !== undefined) {

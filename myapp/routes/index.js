@@ -35,9 +35,6 @@ let validation = [
 
 ];
 
-
-
-
 /* GET home page. */
 router.get('/', indexController.index);
 router.get('/login', indexController.login);
