@@ -1,48 +1,45 @@
 
-	<body>
-		<!-- Header -->
-		<%- if (locals.user !=undefined) { %>
-			<%- include ('./partials/headerLogueado') %>
-				<% } else { %>
-					<%- include ('./partials/header') %>
-						<%} %>
-		<!-- /Header -->
+<body>
+	<!-- Header -->
+	<% if (locals.usuario != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	 <% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
+	<!-- /Header -->
 
-		<!-- Novedades -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Resultados de búsqueda</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Resultados de búsqueda</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			
+			<div class="container products-wrapper">
+				<div class="row">
 				
-				<div class="container products-wrapper">
-					<div class="row">
-					
-						<!-- Show the "ultimos" products -->
-						<% for (let i = 0; i < lista.length; i++) { %>
 
+			<% for (let i = 0; i < resultado.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product">
+						<a href="/product/id/<%=resultado[i].productoId%>">
 							<figure class="product-box_image">
-								<img src="<%= lista[i].foto %>" alt="<%= lista[i].foto %>">
+								<img src= <%= resultado[i].Foto %> alt="">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= lista[i].nombre %></h2>
-								<p><%= lista[i].descripcion %></p>
-								<p>Comentarios: <%= lista[i].comentarios.length %></p>
+								<h2><%= resultado[i].nombre%></h2>
+								<p><%= resultado[i].descripcion %></p>
+								<a href="usuarios/profile/id/<%= resultado[i].usuariosId %>"> <p><%= resultado[i].usuarios.email%></p></a>
+								<p>Comentarios: <%= resultado[i].comentarios.length %></p>
 							</article>
 						</a>
 					</section>
 				</div>
-				<% } %>
+				<%} %>
 
-
-
-
-		<!-- footer -->
-		<%- include('./partials/footer') %>
-		<!-- footer -->
-	</body>
+	<!-- footer -->
+	<%- include('./partials/footer') %>
+	<!-- footer -->
+</body>
 

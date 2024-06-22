@@ -11,10 +11,7 @@
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
-<<<<<<< HEAD
     "express-session": "^1.18.0",
-=======
->>>>>>> f4f3a269abd2a7a0f126504dc0a89c5980dfb7d4
     "express-validator": "^7.1.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",

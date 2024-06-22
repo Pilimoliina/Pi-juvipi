@@ -2,7 +2,11 @@
 <body>
       
 	<!-- Header -->
+	<% if (locals.user !=undefined) { %>
 		<%- include('./partials/headerLogueado') %>
+			<% } else { %>
+				<%- include('./partials/header') %>
+					<% } %>
 	<!-- /Header -->
 
 
@@ -16,7 +20,6 @@
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%= lista[0].usuarios.Usuario %>
 						<a href="/profile/profileEdit">
-
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>

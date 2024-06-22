@@ -1,12 +1,6 @@
 
 <body>
-
-	<%- if (locals.user !=undefined) { %>
-		<%- include ('./partials/headerLogueado') %>
-			<% } else { %>
-				<%- include ('./partials/header') %>
-					<%} %>
-
+	<%- include('./partials/header') %>
 
 
 	<!-- Novedades -->
@@ -17,11 +11,9 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-
 				<form action="/login" method="POST" class="form-todos">
 					<label for="email">Usuario:</label><br>
 					<input type="email" id="usuario" name="email" required><br><br>
-
 
 
 					<label for="contraseña">Contraseña:</label><br>
