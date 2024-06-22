@@ -9,6 +9,7 @@ var usersController = require('../controllers/usersController');
 });*/
 
 
+router.get('/',usersController.profile);
 router.get('/profile',usersController.profile);
 router.get('/profileEdit',usersController.profileEdit);
 

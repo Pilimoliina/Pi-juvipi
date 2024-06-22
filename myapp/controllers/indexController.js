@@ -59,7 +59,8 @@ let indexController = {
 
       let usuario = {
         nombre: form.nUsuario,
-        usuario: req.body.nUsuario,
+        usuario: req.body.nUsuario,  
+        apellido: form.nUsuario,
         email: req.body.email,
         contrasenia: bcrypt.hashSync(req.body.Contra, 10),
         fechaNacimiento: fechaN,

@@ -57,7 +57,7 @@ productInfo: function (req,res) {
             where:{
             [op.or]:
                 [
-                    {nombre: {[op.like]: `%${lk}%`}},
+                    {nombreProducto: {[op.like]: `%${lk}%`}},
                     {descripcion: {[op.like]: `%${lk}%`}}
             ]},
             order: [

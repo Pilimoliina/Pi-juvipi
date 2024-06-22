@@ -25,10 +25,10 @@
 					<section class="product-box">
 						<a href="/product/id/<%=resultado[i].productoId%>">
 							<figure class="product-box_image">
-								<img src= <%= resultado[i].Foto %> alt="">
+								<img src= <%= resultado[i].fotoProducto %> alt="">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= resultado[i].nombre%></h2>
+								<h2><%= resultado[i].nombreProducto%></h2>
 								<p><%= resultado[i].descripcion %></p>
 								<a href="usuarios/profile/id/<%= resultado[i].usuariosId %>"> <p><%= resultado[i].usuarios.email%></p></a>
 								<p>Comentarios: <%= resultado[i].comentarios.length %></p>

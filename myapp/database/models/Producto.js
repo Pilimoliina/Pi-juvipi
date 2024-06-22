@@ -13,10 +13,10 @@ module.exports = function (sequelize, DataTypes) {
         usuariosId:{
             type: DataTypes.INTEGER
         },       
-        nombre:{
+        nombreProducto:{
             type: DataTypes.STRING
         },
-        foto:{
+        fotoProducto:{
             type: DataTypes.STRING
         },
         descripcion:{

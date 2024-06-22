@@ -10,7 +10,7 @@ const mercadolibre = {
     product: 
     [
         {
-            nombre: "Celular",
+            nombreProducto: "Celular",
             foto: "/images/products/celu.jpg",
             descripcion: "Dispositivo inalámbrico electrónico",
             comentarios: [{
@@ -28,7 +28,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Computadora",
+            nombreProducto: "Computadora",
             foto: "/images/products/compu.jpg",
             descripcion: "Máquina digital programable",
             comentarios: [{
@@ -46,7 +46,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Ipad",
+            nombreProducto: "Ipad",
             foto: "/images/products/ipad.jpg",
             descripcion: "Dispositivo informático móvil en el que la pantalla táctil ocupa casi todo su tamaño",
             comentarios: [{
@@ -64,7 +64,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Airpods",
+            nombreProducto: "Airpods",
             foto: "/images/products/airpods.jpg",
             descripcion: "Auriculares inalámbricos",
             comentarios: [{
@@ -82,7 +82,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Apple pencil",
+            nombreProducto: "Apple pencil",
             foto: "/images/products/applePencil.jpg",
             descripcion: "Lápiz para pantalla táctil",
             comentarios: [{
@@ -100,7 +100,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Tv",
+            nombreProducto: "Tv",
             foto: "/images/products/tv.jpg",
             descripcion: "Sistema para la transmisión y recepción de imágenes y sonidos a distancia que simulan movimientos",
             comentarios: [{
@@ -118,7 +118,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Cafetera",
+            nombreProducto: "Cafetera",
             foto: "/images/products/cafetera.jpg",
             descripcion: "Máquina destinada a la preparación del café y recipiente para servirlo",
             comentarios: [{
@@ -136,7 +136,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Heladera",
+            nombreProducto: "Heladera",
             foto: "/images/products/heladera.jpg",
             descripcion: "Electrodoméstico que genera frío para posibilitar la conservación de los alimentos y de otros productos.",
             comentarios: [{
@@ -154,7 +154,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Microondas",
+            nombreProducto: "Microondas",
             foto: "/images/products/microondas.jpg",
             descripcion: "Electrodoméstico destinado a cocinar o calentar alimentos",
             comentarios: [{
@@ -172,7 +172,7 @@ const mercadolibre = {
             }]
         },
         {
-            nombre: "Air fryer",
+            nombreProducto: "Air fryer",
             foto: "/images/products/airfryer.jpg",
             descripcion: "Es un electrodoméstico que te permite cocer o freír los alimentos sin necesidad de sumergirlos en aceite",
             comentarios: [{

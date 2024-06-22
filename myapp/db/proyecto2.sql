@@ -1,6 +1,6 @@
-CREATE SCHEMA programacionII;
+CREATE SCHEMA programacionnII;
 
-USE programacionII;
+USE programacionnII;
 
 CREATE TABLE usuarios (
 /* 	nombreColumna 		tipoDato 		Restricciones */
