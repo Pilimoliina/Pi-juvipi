@@ -1,41 +1,44 @@
 
-	<body>
-		<!-- Header -->
-		<% if (locals.users != undefined) { %>
-			<%- include('./partials/headerLogueado') %>
-		 <% } else { %>
-			<%- include('./partials/header') %>
-		<% } %>
-		<!-- /Header -->
+<body>
+	<!-- Header -->
+	<% if (locals.users != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	 <% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
+	<!-- /Header -->
+	
+	<!-- product detail -->
+	<div class="container products-wrapper">
 		
-		<!-- product detail -->
-		<div class="container products-wrapper">
-			
-			<div class="d-flex align-items-center">
-				<h2 class="products-title"><%= lista.nombreProducto %></h2> 
-				<p class="product-detail-description">
-					<a href="/product/productAdd">Editar</a> 
-				</p>
-			</div>
+		<div class="d-flex align-items-center">
+			<h2 class="products-title"><%= lista.nombreProducto %></h2> 
+			<p class="product-detail-description">
+				<a href="/product/productAdd">Editar</a> 
+			</p>
+		</div>
 
-			<div class="product-detail">
-				<div class="row">
+		<div class="product-detail">
+			<div class="row">
+				<% if(lista != null) { %>
 					<article class="col-12 col-lg-8 product-detail-info">
-						<img src="<%= lista.productos.fotoProducto %>" alt="" class="product-detail-img">
+						<img src="<%= lista.fotoProducto %>" alt="" class="product-detail-img">
 						<p class="product-detail-description">
-							<%= lista.productos.descripcion %></p>
+							<%= lista.descripcion %></p>
 					</article>
 					<div class="col-12 col-lg-4">
 						<section class="comments">
-							<% for ( i = 0; i < lista.comentarios.length; i++) { %>
-								<article>
-									<img src=<%= lista.comentarios[i].usuarios.foto%> alt="">
-									<div class="data">
-										<p class="users">
-										<strong> <a href="profile.html"> <%= lista.productos[0].comentarios[i].usuarios.nombre %> <%= lista[i].comentarios.usuariosId %> </a> </strong> <br>
-										<%= lista.productos[0].comentarios[i].textoComentario %></p>
-									</div>
-								</article>
+							<% if(lista.comentarios.length > 0) { %>
+								<% for ( i = 0; i < lista.comentarios.length; i++) { %>
+									<article>
+										<img src=<%= lista.comentarios[i].usuarios.foto%> alt="">
+										<div class="data">
+											<p class="users">
+											<strong> <a href="/users/<%= lista.comentarios[i].usuarios.id %>"> <%= lista.comentarios[i].usuarios.nombre %> </a> </strong> <br>
+											<%= lista.comentarios[i].textoComentario %></p>
+										</div>
+									</article>
+								<% } %>
 							<% } %>
 							
 						</section>
@@ -45,14 +48,17 @@
 						</form>
 						<hr>
 					</div>
-				</div>
+				<% } else { %>
+					<p>No se encontró el producto.</p>
+				<% } %>
 			</div>
-
 		</div>
-		<!-- /product detail -->
 
-		<!-- footer -->
-		<%- include('./partials/footer') %>
-		<!-- footer -->
+	</div>
+	<!-- /product detail -->
 
-	</body>	
+	<!-- footer -->
+	<%- include('./partials/footer') %>
+	<!-- footer -->
+
+</body>	

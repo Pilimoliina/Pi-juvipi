@@ -3,12 +3,15 @@ const op = mercadolibre.Sequelize.Op;
 const { validationResult } = require('express-validator');
 
 const productController = {
+
     index: function (req, res) {
+
         mercadolibre.Producto.findAll({
              include: [
                   { association: "comentarios" },
                   { association: "usuarios" }
-             ]
+             ],
+             order : [['createdAt', 'DESC']]
         })
              .then(function (resultado) {
                   return res.render('index', { lista: resultado });
@@ -21,7 +24,7 @@ const productController = {
 
 
     
-    productAdd: function (req, res) {
+    productAddPage: function (req, res) {
         res.render('productAdd', { lista: mercadolibre}); //modifique//
     },
     product: function(req,res){
@@ -45,6 +48,7 @@ productInfo: function (req,res) {
                         ]
             }
         ],
+        order: [['createdAt', 'DESC']]
        // order: [[{model: mercadolibre.comentarios}, 'createdAt' , 'DESC']]
     })
 
@@ -79,7 +83,8 @@ productInfo: function (req,res) {
         mercadolibre.Producto.findAll(filtrado)
         .then(function(resultado) {
             if (resultado.length == 0) {
-                return res.send('No hay resultados para su criterio de búsqueda');
+                return res.render("search", { resultado: [], message: "No hay resultados para su criterio de búsqueda" });
+                // return res.send('No hay resultados para su criterio de búsqueda');
     
             } else {
                 return res.render('search', {resultado: resultado});        
@@ -90,10 +95,35 @@ productInfo: function (req,res) {
             return console.log(error);
         })
     
-    }
+    },
+
+    store: function (req, res) {
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+          let form = req.body
+          let nuevoProducto = {
+            usuariosId: req.session.users.id,
+            fotoProducto: form.imagen,
+            nombreProducto: form.nombre,
+            descripcion: form.descripcion
+          }
+          console.log(nuevoProducto);
+    
+          mercadolibre.Producto.create(nuevoProducto)
+            .then(
+              function (results) {
+                return res.redirect("/");
+              }
+            )
+            .catch((err) => {
+              return console.log(err);
+            })
+        } else {
+          res.render("productAdd", { errors: errors.mapped(), old: req.body });
+        }
+    
+      }
         
     };
     
     module.exports = productController;
-    
-    

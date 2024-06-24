@@ -1,12 +1,13 @@
-	<body>
-		<!-- Header -->
-		<% if (locals.users != undefined) { %>
-			<%- include('./partials/headerLogueado') %>
-		 <% } else { %>
-			<%- include('./partials/header') %>
-		<% } %>
-		<!-- /Header -->
-		<!-- Novedades -->
+<body>
+	<!-- Header -->
+	<% if (locals.users != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	 <% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
+	<!-- /Header -->
+	<!-- Novedades -->
+	<% if (locals.users != undefined) { %>
 		<div class="container products-wrapper">
 			<div class="row">
 				<div class="col-12">
@@ -14,22 +15,37 @@
 				</div>
 				<!-- Show the "ultimos" products -->
 				<h2 class="col-12"> 
-					<form action="productAdd" method="get" class="form-todos"> 
-						<label for="imagen">Imagen:</label><br>
-						<input type="file" id="imagen" name="imagen" accept="image/*" required><br><br>
-				
+					<form action="/product/productAdd" method="post" class="form-todos"> 
+						<label for="imagen">Foto del producto: </label>
+						<input id="imagen" type="text" name="imagen" value="<%= locals.old !== undefined && old.imagen ? old.imagen : "" %>">
+						<% if (locals.errors && errors.imagen ) { %>
+							<p> <%= errors.imagen.msg %></p>
+							
+						<%} %>
+						
 						<label for="nombre">Nombre del Producto:</label><br>
-						<input type="text" id="nombre" name="nombre" required><br><br>
-				
+						<input id="nombre" type="text" name="nombre" value="<%= locals.old !== undefined && old.nombre ? old.nombre : "" %>">
+						<% if (locals.errors && errors.nombre ) { %>
+							<p> <%= errors.nombre.msg %></p>
+							
+						<%} %>
+						
 						<label for="descripcion">Descripción:</label><br>
-						<textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br><br>
+						<input id="descripcion" type="text" name="descripcion" value="<%= locals.old !== undefined && old.descripcion ? old.descripcion : "" %>">
+						<% if (locals.errors && errors.descripcion ) { %>
+							<p> <%= errors.descripcion.msg %></p>
+							
+						<%} %>
 				
-						<input type="submit" value="Agregar Producto">
+						<button class="button" type="submit">Agregar producto</button>
 					</form>
 				</h2>
+			</div>
+		</div>
+	<% } %>
 
-		<!-- footer -->
-		<%- include('./partials/footer') %>
-		<!-- footer -->
-	</body>
+	<!-- footer -->
+	<%- include('./partials/footer') %>
+	<!-- footer -->
+</body>
 
