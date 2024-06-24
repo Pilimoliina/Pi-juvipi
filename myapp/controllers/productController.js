@@ -55,7 +55,7 @@ const productController = {
                 });
 
         } else {
-            mercadolibre.productos.findByPk(prodId, {
+            mercadolibre.Producto.findByPk(prodId, {
                 include: [
                     { association: "usuarios" },
                     {
@@ -158,7 +158,7 @@ const productController = {
             let id = req.params.id;
             const userId = res.locals.user.usuariosId;
 
-            mercadolibre.productos.findByPk(id)
+            mercadolibre.Producto.findByPk(id)
                 .then((result) => {
                     if (result.usuariosId != userId) {
                         return res.send("Tu usuario no creo este producto por lo tanto no podes editarlo.")

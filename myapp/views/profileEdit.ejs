@@ -18,39 +18,55 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">
-				<form action="/profile" method="get" class="form-todos">
-					<label for="nombre">Email:</label><br>
-					<input type="email" id="nombre" name="email" value="mvm@gmail.com" required><br><br>
-		   
-					<label for="apellido">Usuario:</label><br>
-					<input type="text" id="usuario" name="usuario" value="vicqueen" required><br><br>
+			<form class='formulario' action="/user/profile/update" method="POST">
+
+				<input type="hidden" name="userId" value="<%= lista.id_usuario %>">
+
+				<label class='LabelForm'> Email:</label>
+				<input class='CampoForm' id="mailUsuario" type="email" name="email"
+					value="<%= lista.email %>">
+				<% if (locals.errors && errors.email) { %>
+					<p class="error">
+						<%= errors.email.msg %>
+					</p>
+					<% } %>
+
+						<label class='LabelForm'> Nombre usuario:</label>
+						<input class='CampoForm' id="usuarioUsuario" type="text"
+							name="nombre_usuario" value="<%= lista.nombre_usuario %>">
+						<% if (locals.errors && errors.nombre_usuario) { %>
+							<p class="error">
+								<%= errors.nombre_usuario.msg %>
+							</p>
+							<% } %>
+								<label class='LabelForm'> Contraseña:</label>
+								<input class='CampoForm' id="contrasenaUsuario" type="password"
+									name="pass" value="">
+								<% if (locals.errors && errors.pass) { %>
+									<p class="error">
+										<%= errors.pass.msg %>
+									</p>
+									<% } %>
+
+										<label class='LabelForm'> Fecha de nacimiento:</label>
+										<input class='CampoForm' id="fechaUsuario" type="date"
+											name="fecha" value="<%= lista.fecha %>">
 
 
-					<label for="nacimiento">Fecha de nacimiento:</label><br>
-					<input type="date" name="fechaN" id="nacimiento" required><br><br>
+										<label class='LabelForm'> Número de documento:</label>
+										<input class='CampoForm' id="documentoUsuario"
+											type="number" name="dni" value="<%= lista.dni %>">
+
+										<label class='LabelForm'> Foto de perfil: </label>
+										<input class='CampoForm' id="fotoPerfilUsuarioText"
+											type="text" name="foto" value="<%= lista.foto %>">
 
 
-					<label for="doc">Numero de documento:</label><br>
-					<input type="number" name="numeroD" id="doc" value="46240453" required><br><br>
-		   
-					<label for="foto">Foto de perfil:</label><br>
-					<input type="file" id="imagen" name="imagen" accept="image/*" required><br><br>
-		   
-					<label for="contraseña">Contraseña:</label><br>
-					<input type="password" id="contraseña" name="contraseña" required><br><br>
-		   
-					<label for="confirmar_contraseña">Confirmar Contraseña:</label><br>
-					<input type="password" id="confirmar_contraseña" name="confirmar_contraseña" required><br><br>
-		   
-					<input type="submit" value="Guardar Cambios">
-				</form>
-			</h2>
+										<button class="button">Editar usuario</button>
+			</form>
 
+			<!-- footer -->
+			<%- include('./partials/footer')%>
+				<!-- /footer -->
 
-
-
-	<!-- footer -->
-	<%- include('./partials/footer') %>
-	<!-- footer -->
 </body>
