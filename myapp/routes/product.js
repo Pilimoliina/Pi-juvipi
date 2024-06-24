@@ -26,6 +26,22 @@ let validationComentario= [
     .isLength({ min: 3 }).withMessage('Su comentario debe tener al menos 3 caracteres'),
 ];
 
+let validationUpdate= [
+    body('fotoProducto')
+    .notEmpty()
+    .withMessage('Debes ingresar una imágen del producto')
+    .bail(),
+
+    body('nombreProducto')
+    .notEmpty()
+    .withMessage('Debes ingresar el nombre del producto')
+    .bail(),
+
+    body('descripcion')
+    .notEmpty()
+    .withMessage('Debes ingresar una descripción del producto')
+    .bail(),
+];
 
 router.get('/',productController.product);
 router.get('/productAdd', productController.productAddPage);
@@ -35,5 +51,9 @@ router.get('/id/:id', productController.productInfo);
 router.post('/productAdd', validationsProducto, productController.store);
 
 router.post('/', validationComentario, productController.comment);
+
+router.get('/edit/:id', productController.showFormUpdate);
+
+router.post("/update", validationUpdate, productController.update);
 
 module.exports = router;

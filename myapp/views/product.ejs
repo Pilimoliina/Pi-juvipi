@@ -1,74 +1,76 @@
 <body>
 	<!-- Header -->
-	<% if (locals.users != undefined) { %>
+	<% if (locals.users !=undefined) { %>
 		<%- include('./partials/headerLogueado') %>
-	<% } else { %>
-		<%- include('./partials/header') %>
-	<% } %>
-	<!-- /Header -->
-	
-	<!-- product detail -->
-	<div class="container products-wrapper">
-		
-		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= lista.nombreProducto %></h2> 
-			<p class="product-detail-description">
-				<a href="/product/productAdd">Editar</a> 
-			</p>
-		</div>
+			<% } else { %>
+				<%- include('./partials/header') %>
+					<% } %>
+						<!-- /Header -->
 
-		<div class="product-detail">
-			<div class="row">
-				<% if(lista != null) { %>
-					<article class="col-12 col-lg-8 product-detail-info">
-						<img src="<%= lista.fotoProducto %>" alt="" class="product-detail-img">
-						<p class="product-detail-description"><%= lista.descripcion %></p>
-					</article>
-					<div class="col-12 col-lg-4">
-						<section class="comments">
-							<% if(lista.comentarios.length > 0) { %>
-								<% for (let i = 0; i < lista.comentarios.length; i++) { %>
-									<article>
-										<% if (lista.comentarios[i].usuarios) { %>
-											<img src="<%= lista.comentarios[i].usuarios.foto %>" alt="">
-											<div class="data">
-												<p class="users">
-													<strong><a href="/users/profile/id/<%= lista.comentarios[i].usuariosId %>"><%= lista.comentarios[i].usuarios.nombre %></a></strong> <br>
-													<strong><a href="/profile"><%= lista.comentarios[i].textoComentario %></a></strong>
-												</p>
-											</div>
+						<!-- product detail -->
+						<div class="container products-wrapper">
+
+							<div class="d-flex align-items-center">
+								<h2 class="products-title">
+									<%= lista.nombreProducto %>
+								</h2>
+								<p class="product-detail-description">
+									<a href="/product/productAdd">Editar</a>
+								</p>
+							</div>
+
+							<div class="product-detail">
+								<div class="row">
+									<% if(lista !=null) { %>
+										<article class="col-12 col-lg-8 product-detail-info">
+											<img src="<%= lista.fotoProducto %>" alt="" class="product-detail-img">
+											<p class="product-detail-description">
+												<%= lista.descripcion %>
+											</p>
+										</article>
+										<div class="col-12 col-lg-4">
+											<section class="comments">
+												<% if(lista.comentarios.length> 0) { %>
+													<% for ( i=0; i < lista.comentarios.length; i++) { %>
+														<article>
+															<img src=<%=lista.comentarios[i].usuarios.foto%> alt="">
+															<div class="data">
+																<p class="users">
+																	<strong> <a
+																			href="/users/<%= lista.comentarios[i].usuarios.id %>">
+																			<%= lista.comentarios[i].usuarios.nombre %>
+																		</a> </strong> <br>
+																	<%= lista.comentarios[i].textoComentario %>
+																</p>
+															</div>
+														</article>
+														<% } %>
+															<% } %>
+
+											</section>
+											<% if (locals.users !=undefined) { %>
+												<form class="form" action="/product" method="post">
+													<input type="hidden" name="id" value="<%= lista.productosId %>">
+													<input class="form-input" type="text" value=""
+														placeholder="Agregar comentario">
+													<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+												</form>
+												<% } %>
+
+													<hr>
+										</div>
 										<% } else { %>
-											<p class="error">Usuario no encontrado para el comentario</p>
-										<% } %>
-									</article>
-								<% } %>
-							<% } else { %>
-								<p>No hay comentarios</p>
-							<% } %>
-						</section>
-						<% if (locals.users != undefined) { %>
-							<form class="form" action="/product" method="POST">
-								<input type="hidden" name="id" value="<%= lista.productosId %>">
-								<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
-								<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-							</form>
-							<% if (locals.errors && locals.errors.comentarios) { %>
-								<p class="error"><%= locals.errors.comentarios.msg %></p>
-							<% } %>
-						<% } else { %>
-							<p class="error">Debes estar logueado para comentar</p>
-						<% } %>
-						<hr>
-					</div>
-				<% } %>
-			</div>
-		</div>
-	</div>
-	<!-- /product detail -->
+											<p class="error">Debes estar logueado para comentar</p>
+											<% } %>
+												<hr>
+								</div>
+							</div>
 
-	<!-- footer -->
-	<%- include('./partials/footer') %>
-	<!-- /footer -->
+						</div>
+						<!-- /product detail -->
+
+						<!-- footer -->
+						<%- include('./partials/footer') %>
+							<!-- footer -->
 
 </body>
-
