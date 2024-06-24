@@ -25,10 +25,10 @@ const productController = {
 
     
     productAddPage: function (req, res) {
-        res.render('productAdd', { lista: mercadolibre}); //modifique//
+        res.render('productAdd', { lista: mercadolibre}); 
     },
     product: function(req,res){
-       res.render('product', { lista: mercadolibre}); //modifique//
+       res.render('product', { lista: mercadolibre}); 
        //return res.redirect ("/")
     },
     search: function (req, res) {
@@ -39,19 +39,19 @@ const productController = {
         let errors = validationResult(req);
 
         let infoComment= req.body;
-        const userId = res.locals.user.id_usuario;
+        const userId = res.locals.users.usuarios.id;
         const prodId = infoComment.id;
 
         if (errors.isEmpty()) {
             let nuevoComment = {
-                id_usuario: userId,
-                id_producto: prodId,
-                comentario: infoComment.comentario,
+                usuariosId: userId,
+                productosId: prodId,
+                textoComentario: infoComment.comentarios,
 
             };
 
-            db.Comentario.create(nuevoComment)
-            .then((result) => {
+            mercadolibre.comentarios.create(nuevoComment)
+            .then((resultado) => {
                 return res.redirect("/product/id/" + infoComment.id);
             })
             .catch((error) => {
@@ -60,24 +60,24 @@ const productController = {
 
 
         } else {
-            db.Producto.findByPk(prodId, {
+            mercadolibre.productos.findByPk(prodId, {
                 include: [
-                    { association: "Usuario" },
-                    { association: "Comentario" ,
+                    { association: "usuarios" },
+                    { association: "comentarios" ,
                         include: [
-                            { association: "Usuario" },
-                            { association: 'Producto' }
+                            { association: "usuarios" },
+                            { association: 'productos' }
                         ],
 
-                        order: [['created_at', 'DESC']]
+                        order: [['createdAt', 'DESC']]
                     }
                 ]
             })
-            .then(function(result){
+            .then(function(resultado){
                 return res.render('product', {
                     errors: errors.mapped(),
                     old: req.body,
-                    lista: result,
+                    lista: resultado,
                 }
                 );
             })

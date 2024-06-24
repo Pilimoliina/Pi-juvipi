@@ -1,9 +1,8 @@
-
 <body>
 	<!-- Header -->
 	<% if (locals.users != undefined) { %>
 		<%- include('./partials/headerLogueado') %>
-	 <% } else { %>
+	<% } else { %>
 		<%- include('./partials/header') %>
 	<% } %>
 	<!-- /Header -->
@@ -23,42 +22,53 @@
 				<% if(lista != null) { %>
 					<article class="col-12 col-lg-8 product-detail-info">
 						<img src="<%= lista.fotoProducto %>" alt="" class="product-detail-img">
-						<p class="product-detail-description">
-							<%= lista.descripcion %></p>
+						<p class="product-detail-description"><%= lista.descripcion %></p>
 					</article>
 					<div class="col-12 col-lg-4">
 						<section class="comments">
 							<% if(lista.comentarios.length > 0) { %>
-								<% for ( i = 0; i < lista.comentarios.length; i++) { %>
+								<% for (let i = 0; i < lista.comentarios.length; i++) { %>
 									<article>
-										<img src=<%= lista.comentarios[i].usuarios.foto%> alt="">
-										<div class="data">
-											<p class="users">
-											<strong> <a href="/users/<%= lista.comentarios[i].usuarios.id %>"> <%= lista.comentarios[i].usuarios.nombre %> </a> </strong> <br>
-											<%= lista.comentarios[i].textoComentario %></p>
-										</div>
+										<% if (lista.comentarios[i].usuarios) { %>
+											<img src="<%= lista.comentarios[i].usuarios.foto %>" alt="">
+											<div class="data">
+												<p class="users">
+													<strong><a href="/users/profile/id/<%= lista.comentarios[i].usuariosId %>"><%= lista.comentarios[i].usuarios.nombre %></a></strong> <br>
+													<strong><a href="/profile"><%= lista.comentarios[i].textoComentario %></a></strong>
+												</p>
+											</div>
+										<% } else { %>
+											<p class="error">Usuario no encontrado para el comentario</p>
+										<% } %>
 									</article>
 								<% } %>
+							<% } else { %>
+								<p>No hay comentarios</p>
 							<% } %>
-							
 						</section>
-						<form class="form" action="/" method="get">
-							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-						</form>
+						<% if (locals.users != undefined) { %>
+							<form class="form" action="/product" method="POST">
+								<input type="hidden" name="id" value="<%= lista.productosId %>">
+								<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
+								<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+							</form>
+							<% if (locals.errors && locals.errors.comentarios) { %>
+								<p class="error"><%= locals.errors.comentarios.msg %></p>
+							<% } %>
+						<% } else { %>
+							<p class="error">Debes estar logueado para comentar</p>
+						<% } %>
 						<hr>
 					</div>
-				<% } else { %>
-					<p>No se encontró el producto.</p>
 				<% } %>
 			</div>
 		</div>
-
 	</div>
 	<!-- /product detail -->
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>
-	<!-- footer -->
+	<!-- /footer -->
 
-</body>	
+</body>
+
