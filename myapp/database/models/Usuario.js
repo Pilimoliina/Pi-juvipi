@@ -10,8 +10,6 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true,
             type: DataTypes.INTEGER
         },
- 
- 
         nombre: {
             type: DataTypes.STRING
         },

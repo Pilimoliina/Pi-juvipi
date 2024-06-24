@@ -17,7 +17,15 @@ let validationsProducto = [
         .notEmpty()
         .withMessage("Debes ingresar una descripcion para el nuevo producto")
         .bail()
-]
+];
+
+let validationComentario= [
+    body('comentario')
+    .notEmpty().withMessage('Ingrese un comentario')
+    .bail()
+    .isLength({ min: 3 }).withMessage('Su comentario debe tener al menos 3 caracteres'),
+];
+
 
 router.get('/',productController.product);
 router.get('/productAdd', productController.productAddPage);
@@ -25,5 +33,7 @@ router.get('/search', productController.search);
 router.get('/id/:id', productController.productInfo);
 
 router.post('/productAdd', validationsProducto, productController.store);
+
+router.post('/', validationComentario, productController.comment);
 
 module.exports = router;
