@@ -12,10 +12,9 @@ let indexController = {
     mercadolibre.Producto.findAll({
       include: [
         { association: "usuarios" },
-        { association: "comentarios" },
-
-
-      ]
+        { association: "comentarios" }
+      ],
+      order : [['createdAt', 'DESC']]
     })
 
 
@@ -65,7 +64,7 @@ let indexController = {
         contrasenia: bcrypt.hashSync(req.body.Contra, 10),
         fechaNacimiento: fechaN,
         numeroDocumento: numeroD,
-        foto: form.perfil
+        foto:" /images/users/" +form.perfil
       };
 
 
@@ -135,8 +134,6 @@ let indexController = {
 
 
 module.exports = indexController;
-
-
 
 
 

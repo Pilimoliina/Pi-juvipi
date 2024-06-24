@@ -22,10 +22,11 @@ const productController = {
 
     
     productAdd: function (req, res) {
-        res.render('productAdd', { lista: mercadolibre.productAdd });
+        res.render('productAdd', { lista: mercadolibre}); //modifique//
     },
     product: function(req,res){
-        res.render('product', { lista: mercadolibre.product});
+       res.render('product', { lista: mercadolibre}); //modifique//
+       //return res.redirect ("/")
     },
     search: function (req, res) {
         res.render('search',{ lista: mercadolibre.product});
@@ -44,7 +45,7 @@ productInfo: function (req,res) {
                         ]
             }
         ],
-        order: [[{model: mercadolibre.comentarios}, 'createdAt' , 'DESC']]
+       // order: [[{model: mercadolibre.comentarios}, 'createdAt' , 'DESC']]
     })
 
 

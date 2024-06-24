@@ -2,49 +2,52 @@
 	<!-- Header -->
 	<% if (locals.users !=undefined) { %>
 		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
+	<!-- /Header -->
+	<!-- Banner -->
+	<div class="banner">
+		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+	</div>
+	<!-- /Banner -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Novedades</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<% if(lista != null) { %>
+				<% for (let i=0; i < lista.length; i++) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/product/id/<%=lista[i].id%>">
+								<figure class="product-box_image">
+									<img src="<%= lista[i].fotoProducto %>" alt="<%= lista[i].descripcion %>">
+								</figure>
+								<article class="product-box_data">
+									<h2>
+										<%= lista[i].nombreProducto %>
+									</h2>
+									<p>
+										<%= lista[i].descripcion %>
+									</p>
+									<p>Comentarios: <%= lista[i].comentarios.length %>
+									</p>
+									<p><a href="/users/<%=lista[i].usuariosId%>">Creado
+											por: <%= lista[i].usuarios.nombre%>
+									</p>
+							</a>
+							</article>
+							</a>
+						</section>
+					</div>
+				<% } %>
 			<% } else { %>
-				<%- include('./partials/header') %>
-					<% } %>
-						<!-- /Header -->
-						<!-- Banner -->
-						<div class="banner">
-							<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
-						</div>
-						<!-- /Banner -->
-
-						<!-- Novedades -->
-						<div class="container products-wrapper">
-							<div class="row">
-								<div class="col-12">
-									<h2 class="products-title">Novedades</h2>
-								</div>
-								<!-- Show the "ultimos" products -->
-								<% for (let i=0; i < lista.length; i++) { %>
-
-									<div class="col-12 col-sm-6 col-lg-3">
-										<section class="product-box">
-											<a href="/product/id/<%=lista[i].id%>">
-												<figure class="product-box_image">
-													<img src="<%= lista[i].fotoProducto %>" alt="<%= lista[i].fotoProducto %>">
-												</figure>
-												<article class="product-box_data">
-													<h2>
-														<%= lista[i].nombreProducto %>
-													</h2>
-													<p>
-														<%= lista[i].descripcion %>
-													</p>
-													<p>Comentarios: <%= lista[i].comentarios.length %>
-													</p>
-													<p><a href="/users/profile/id/<%=lista[i].usuarios.usuariosId%>">Creado
-															por: <%= lista[i].usuarios.nombre%>
-													</p>
-											</a>
-											</article>
-											</a>
-										</section>
-									</div>
-									<% } %>
+				<p>No se encontraron productos disponibles.</p>
+			<% } %>
 										<!-- <div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/product">

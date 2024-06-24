@@ -40,7 +40,7 @@ router.get('/', indexController.index);
 router.get('/login', indexController.login);
 router.get('/register', indexController.register);
 router.post('/register', validation, indexController.store);
-router.post("/login", validation, indexController.loginUser)
+router.post('/login', validation, indexController.loginUser)
 router.post('/logout',  indexController.logout);
 
 module.exports = router;

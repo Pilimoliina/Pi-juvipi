@@ -11,7 +11,9 @@ var usersController = require('../controllers/usersController');
 
 router.get('/',usersController.profile);
 router.get('/profile',usersController.profile);
+router.get('/:id',usersController.profile);
 router.get('/profileEdit',usersController.profileEdit);
+
 
 
 module.exports = router;
