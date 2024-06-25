@@ -43,18 +43,13 @@ let validationUpdate= [
     .bail(),
 ];
 
-let validacionComentario = [
-    body("comentario")
-        .notEmpty()
-        .isLength({ min: 3 })
-        .withMessage("El comentario debe tener al menos 3 caracteres.")
-        .bail()
-]
-
 router.get('/',productController.product);
 router.get('/productAdd', productController.productAddPage);
 router.get('/search', productController.search);
 router.get('/:id', productController.productInfo);
+router.get("/productEdit/:id", productController.productEdit);
+router.post("/productEdit/", validationsProducto, productController.update);
+router.get("/productDelete/:id", productController.productDelete);
 
 router.post('/productAdd', validationsProducto, productController.store);
 
@@ -63,6 +58,6 @@ router.post('/', validationComentario, productController.comment);
 router.get('/edit/:id', productController.showFormUpdate);
 
 router.post("/update", validationUpdate, productController.update);
-router.post("/comment", validacionComentario, productController.comment)
+router.post("/comment", validationComentario, productController.comment)
 
 module.exports = router;

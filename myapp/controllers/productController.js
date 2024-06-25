@@ -35,9 +35,9 @@ const productController = {
     comment: function(req, res) {
         let form = req.body
         mercadolibre.Comentario.create({
-            usuarioId: form.usuariosId,
-            productoId: form.productosId,
-            textoComentario: form.textoComentario,
+            usuariosId: form.usuarioId,
+            productosId: form.productoId,
+            textoComentario: form.comentario,
             // createdAt: new Date()
         })
         .then (function (result) {
@@ -120,7 +120,7 @@ const productController = {
     showFormUpdate: function (req, res) {
         if (req.session.users != undefined) {
             let id = req.params.id;
-            const userId = res.locals.user.usuariosId;
+            const userId = res.locals.users.usuariosId;
 
             mercadolibre.Producto.findByPk(id)
                 .then((result) => {
@@ -137,46 +137,24 @@ const productController = {
         }
 
     }, 
-    update: function (req, res) {
+    update: function(req, res) {
         let form = req.body;
-        let id = form.id
-        let errorrs = validationResult(req);
-
-        if (errorrs.isEmpty()) {
-            let nuevoProducto = {
-                fotoProducto: '/images/products/' + form.fotoProducto,
-                nombreProducto: form.nombreProducto,
-                descripcion: form.descripcion,
-            }
-
-            let filtro = {
-                where: [{ productosId: form.id }]
-            };
-
-            mercadolibre.Producto.update(nuevoProducto, filtro)
-                .then((result) => {
-                    return res.redirect("/");
-                }).catch((err) => {
-                    return console.log(err);
-                });
-
-        } else {
-
-            mercadolibre.productosId.findByPk(id)
-                .then(function (resultado) {
-                    return res.render('productEdit.ejs', {
-                        errors: errorrs.mapped(),
-                        old: req.body,
-                        productos: resultado
-                    });
-
-                }).catch(function (errores) {
-                    return console.log(errores);;
-                })
-
-
-
-        };
+        let producto = {
+            usuariosId: req.session.users.id,
+            fotoProducto: form.imagen,
+            nombreProducto: form.producto,
+            descripcion: form.descripcion
+        }
+        
+        mercadolibre.Producto.update(producto, {
+            where: [{ id: form.id }]
+        })
+        .then(function (result) {
+            return res.redirect("/product/" + form.id);
+        })
+        .catch(function (error) {
+            return console.log(error);
+        })
     },
     
 
@@ -216,6 +194,18 @@ const productController = {
 
     },
 
+    productEdit: function (req, res) {
+        let id = req.params.id;
+
+        mercadolibre.Producto.findByPk(id)
+        .then(function (result) {
+            return res.render("productEdit", { data: result });
+        })
+        .catch(function (error) {
+            return console.log(error);
+        })
+    },
+
     store: function (req, res) {
         let errors = validationResult(req)
         if (errors.isEmpty()) {
@@ -241,6 +231,19 @@ const productController = {
             res.render("productAdd", { errors: errors.mapped(), old: req.body });
         }
 
+    },
+    productDelete : function (req, res) {
+        let id = req.params.id;
+
+        mercadolibre.Producto.destroy({
+            where: [{ id: id}]
+        })
+        .then(function (result) {
+            return res.redirect("/")
+        })
+        .catch(function (error) {
+            return console.log(error)
+        })
     },
 
     

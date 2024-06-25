@@ -14,9 +14,11 @@
 								<h2 class="products-title">
 									<%= lista.nombreProducto %>
 								</h2>
-								<p class="product-detail-description">
-									<a href="/product/productAdd">Editar</a>
-								</p>
+								<% if (locals.users != undefined && locals.users.id == lista.usuarios.id) { %>
+									<a href="/product/productEdit/<%= lista.id %>">Editar</a>
+									<span></span>
+									<a href="/product/productDelete/<%= lista.id %>">Borrar</a>
+								<% } %>
 							</div>
 
 							<div class="product-detail">
