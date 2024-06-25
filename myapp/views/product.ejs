@@ -44,25 +44,25 @@
 																</p>
 															</div>
 														</article>
-														<% } %>
-															<% } %>
-
-											</section>
-											<% if (locals.users !=undefined) { %>
-												<form class="form" action="/product" method="post">
-													<input type="hidden" name="id" value="<%= lista.productosId %>">
-													<input class="form-input" type="text" value=""
-														placeholder="Agregar comentario">
-													<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-												</form>
+													<% } %>
 												<% } %>
 
-													<hr>
-										</div>
-										<% } else { %>
-											<p class="error">Debes estar logueado para comentar</p>
-											<% } %>
+											</section>
+											<% if (locals.users != undefined) { %>
+												<form class="form" action="/product/comment" method="post">
+													<input class="form-input" name="comentario" type="text" value="" placeholder="Agregar comentario">
+													<input type="hidden" name="usuarioId" value="<%= lista.usuarios.id %>" />
+													<input type="hidden" name="productoId" value="<%= lista.id %>" />
+													<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+												</form>
 												<hr>
+											<% } else { %>
+												<form class="form" action="/users/login" method="get">
+													<button type="submit" class="button">Debes estar logueado para comentar</button>
+												</form>
+												<hr>
+											<% } %>
+									<hr><% } %>
 								</div>
 							</div>
 

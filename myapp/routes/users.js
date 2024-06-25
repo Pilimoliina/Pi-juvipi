@@ -13,39 +13,45 @@ const mercadolibre = require('../db/dataBase');
 });*/
 
 
-let validationsProfileUpdate = [
-  body('email')
-      .notEmpty().withMessage('Debe ingresar un mail').bail()
-      .isEmail().withMessage('Debe ingresar un mail valido')
-      .custom(function (value, { req }) {
-          return mercadolibre.usuario.findOne({
-              where: {
-                  email: req.body.email,
-                  usuariosId: { [Op.ne]: req.body.userId }
-              }
-
-          })
-              .then(function (user) {
-                  if (user) {
-                      throw new Error('El mail ingresado ya existe')
+let validacionesEdit = [
+  body("email")
+      .notEmpty()
+      .withMessage("Debes completar el mail")
+      .isEmail()
+      .withMessage("Ingrese un mail válido")
+      .custom(function (value, {req}) {
+          
+          if( value != req.session.users.email ) {
+              return mercadolibre.usuario.findOne({
+                  where: {email: value}
+              })
+              .then(function (resultado) {
+                  if(resultado) {
+                      throw new Error("El mail ingresado ya pertenece a otro usuario")
                   }
               })
+          } else {
+              return true;
+          }
       }),
-  body("nombre_usuario")
-      .notEmpty().withMessage('Debe ingresar un nombre de usuario').bail(),
-  body('contraseña')
-      .notEmpty().withMessage('Debe ingresar una contraseña').bail()
-      .isLength({ min: 4 }).withMessage('La contraseña debe ser mas larga'),
+      body ("usuario")
+          .notEmpty()
+          .withMessage("Ingrese un nombre de usuario")
+          .bail(),
+      body("password")
+          .notEmpty().withMessage("La contraseña debe tener al menos 4 caracteres")
+          .isLength({ min: 4 })
 
-];
+
+]
 
 router.get('/',usersController.profile);
 router.get('/profile',usersController.profile);
 router.get('/:id',usersController.profile);
-router.get('/profileEdit',usersController.profileEdit);
-router.get('/profileEdit/:id', usersController.profileEdit);
+router.get('/profileEdit/redirect',usersController.profileEdit);
+router.post('/profileEdit/:id/redirect', validacionesEdit,  usersController.profileUpdate);
 
-router.post('/profile/update', validationsProfileUpdate, usersController.profileUpdate);
+//router.post('/profile/update', validationsProfileUpdate, usersController.profileUpdate);
 
 
 

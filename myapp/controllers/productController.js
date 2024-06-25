@@ -8,8 +8,8 @@ const productController = {
 
         mercadolibre.Producto.findAll({
             include: [
-                { association: "comentarios" },
-                { association: "usuarios" }
+                { association: "Comentario" },
+                { association: "Usuario" }
             ],
             order: [['createdAt', 'DESC']]
         })
@@ -32,54 +32,20 @@ const productController = {
         //return res.redirect ("/")
     },
 
-    comment: function (req, res) {
-        let errors = validationResult(req);
-
-        let infoComment = req.body;
-        const userId = res.locals.users.usuariosId;
-        const prodId = infoComment.id;
-
-        if (errors.isEmpty()) {
-            let nuevoComment = {
-                usuariosId: userId,
-                productosId: prodId,
-                textoComentario: infoComment.comentarios,
-            };
-
-            mercadolibre.comentarios.create(nuevoComment)
-                .then((resultado) => {
-                    return res.redirect("/product/id/" + infoComment.id);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-
-        } else {
-            mercadolibre.Producto.findByPk(prodId, {
-                include: [
-                    { association: "usuarios" },
-                    {
-                        association: "comentarios",
-                        include: [
-                            { association: "usuarios" },
-                            { association: 'productos' }
-                        ],
-                        order: [['createdAt', 'DESC']]
-                    }
-                ]
-            })
-                .then(function (resultado) {
-                    return res.render('product', {
-                        errors: errors.mapped(),
-                        old: req.body,
-                        lista: resultado,
-                    })
-
-                }).catch(function (errores) {
-                    return console.log(errores);;
-
-                })
-        }
+    comment: function(req, res) {
+        let form = req.body
+        mercadolibre.Comentario.create({
+            usuarioId: form.usuariosId,
+            productoId: form.productosId,
+            textoComentario: form.textoComentario,
+            // createdAt: new Date()
+        })
+        .then (function (result) {
+            return res.redirect("/product/" + form.productoId);
+        })
+        .catch (function (errors) {
+            return console.log(errors);
+        })
     },
 
     search: function (req, res) {
@@ -108,10 +74,8 @@ const productController = {
 
             .then(function (resultado) {
                 return res.render("product", { lista: resultado, session: session })
-
             }).catch(function (errores) {
                 return console.log(errores);;
-
             })
     },
 
@@ -230,8 +194,8 @@ const productController = {
                 ['createdAt', 'DESC']
             ],
             include: [
-                { association: "usuarios" },
-                { association: "comentarios" }
+                { association: "Usuario" },
+                { association: "Comentario" }
             ]
 
         };

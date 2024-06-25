@@ -76,9 +76,6 @@ let indexController = {
           return console.log(error);
         });
 
-
-
-
        } else {
            res.render('register', {error: error.mapped(), old: req.body})
            }
@@ -93,38 +90,37 @@ let indexController = {
     
         const bcrypt = require('bcryptjs');
 
-        
-    mercadolibre.Usuario.findOne(filtro)
-      .then((resultado) => {
-        if (resultado === null) {
-          return res.send("No existe el mail " + form.email);
-        }
+        mercadolibre.Usuario.findOne(filtro)
+          .then((resultado) => {
+            if (resultado === null) {
+              return res.send("No existe el mail " + form.email);
+            }
 
-        // Verificar si resultado.contrasenia está definido antes de comparar
-        if (!resultado.contrasenia) {
-          return res.send("No se encontró la contraseña para el usuario " + form.email);
-        }
+            // Verificar si resultado.contrasenia está definido antes de comparar
+            if (!resultado.contrasenia) {
+              return res.send("No se encontró la contraseña para el usuario " + form.email);
+            }
 
-        // Comparar la contraseña ingresada con la contraseña almacenada en la base de datos
-        let check = bcrypt.compareSync(form.contra, resultado.contrasenia);
-        if (check) {
-          req.session.users = resultado;
+            // Comparar la contraseña ingresada con la contraseña almacenada en la base de datos
+            let check = bcrypt.compareSync(form.contra, resultado.contrasenia);
+            if (check) {
+              req.session.users = resultado;
 
-          // Guardar en cookie si el usuario tildó la checkbox "Recordarme"
-          if (form.recordarme !== undefined) {
-            res.cookie("usuariosId", resultado.id, { maxAge: 1000 * 60 * 15 });
-          }
-          return res.redirect("/");
-        } else {
-          return res.send("La contraseña es incorrecta");
-        }
+              // Guardar en cookie si el usuario tildó la checkbox "Recordarme"
+              if (form.recordarme !== undefined) {
+                res.cookie("usuariosId", resultado.id, { maxAge: 1000 * 60 * 15 });
+              }
+              return res.redirect("/");
+            } else {
+              return res.send("La contraseña es incorrecta");
+            }
 
-      }).catch((error) => {
-        return console.log(error);
-      });
+          }).catch((error) => {
+            return console.log(error);
+          });
 
 
-  },
+      },
   logout: function (req, res) {
     req.session.destroy();
     res.clearCookie("usuariosId");

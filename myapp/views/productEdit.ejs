@@ -5,7 +5,7 @@
 
     <body>
         <!-- Header -->
-        <% if (locals.user !=undefined) { %>
+        <% if (locals.users !=undefined) { %>
             <%- include('./partials/headerLogueado') %>
                 <% } else { %>
                     <%- include('./partials/header') %>
@@ -22,7 +22,7 @@
                                     <!-- Show the "ultimos" products -->
                                     <form class='formulario' action="/product/update" method="POST">
 
-                                        <input type="hidden" name="id" value="<%= productos.productosId %>">
+                                        <input type="hidden" name="id" value="<%= producto.productosId %>">
 
                                         <label class='LabelForm'>Ruta de la imagen</label>
                                         <input class='CampoForm' type="text" id="ImagenProductoAgregado"
